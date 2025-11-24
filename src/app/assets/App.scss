@@ -1,0 +1,104 @@
+/* components/Navbar/AppNavbar.scss */
+
+$blue-500: #3b82f6;
+$indigo-500: #6366f1;
+$purple-500: #7c3aed;
+$bg-dark: #071029;
+$text-muted: #94a3b8;
+
+.pg-navbar {
+  background: linear-gradient(180deg, rgba(9,15,36,0.95), rgba(6,10,20,0.98));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+
+  .pg-logo {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 4px 18px rgba(99,102,241,0.08);
+    background: linear-gradient(135deg, $indigo-500, $purple-500);
+    padding: 4px;
+  }
+
+  .brand-text {
+    color: #e6eef8;
+    font-weight: 700;
+    margin-left: 0.6rem;
+    letter-spacing: 0.2px;
+    font-size: 1.15rem;
+  }
+
+  /* Right Side Nav Items */
+  .nav-right {
+    gap: 0.8rem;
+
+    .nav-link {
+      color: rgba(230,238,248,0.85) !important;
+      font-weight: 500;
+      transition: color .18s ease, transform .12s ease;
+
+      &:hover {
+        color: $indigo-500 !important;
+        transform: translateY(-1px);
+      }
+    }
+
+    .resume-link {
+      color: $text-muted;
+      padding: 0.45rem 0.7rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .15s ease, color .12s ease;
+
+      &:hover {
+        background: rgba(99,102,241,0.08);
+        color: $indigo-500;
+      }
+    }
+
+    .hire-btn {
+      background: linear-gradient(90deg, $indigo-500, $purple-500);
+      border: none;
+      box-shadow: 0 6px 20px rgba(99,102,241,0.16);
+      padding: 0.5rem 1.05rem;
+      font-weight: 700;
+      border-radius: 8px;
+
+      &:hover {
+        filter: brightness(.96);
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  /* Mobile tweaks */
+  @media (max-width: 991.98px) {
+    .brand-text {
+      display: none;
+    }
+
+    .pg-logo {
+      width: 42px;
+      height: 42px;
+    }
+
+    .nav-right {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .resume-link {
+        display: inline-block;
+        padding: 0.6rem 0.9rem;
+      }
+
+      .hire-btn {
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
