@@ -1,104 +1,347 @@
-/* components/Navbar/AppNavbar.scss */
+/* =======================
+   GLOBAL DEVOPS COLORS
+   ======================= */
+$blue: #3b82f6;
+$purple: #7c3aed;
+$indigo: #6366f1;
 
-$blue-500: #3b82f6;
-$indigo-500: #6366f1;
-$purple-500: #7c3aed;
-$bg-dark: #071029;
-$text-muted: #94a3b8;
+$bg-dark: #0a0f1e;
+$bg-card: #141428;
+$text-light: #e0e0ff;
 
-.pg-navbar {
-  background: linear-gradient(180deg, rgba(9,15,36,0.95), rgba(6,10,20,0.98));
-  border-bottom: 1px solid rgba(255,255,255,0.03);
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+/* =======================
+   NAVBAR ROOT
+   ======================= */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3000;
+  padding: 15px 0;
+  background: linear-gradient(90deg, #0c1024, #0a0f1e 35%, #150e30);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
 
-  .pg-logo {
-    border-radius: 8px;
-    object-fit: cover;
-    width: 44px;
-    height: 44px;
-    box-shadow: 0 4px 18px rgba(99,102,241,0.08);
-    background: linear-gradient(135deg, $indigo-500, $purple-500);
-    padding: 4px;
+  &.scrolled {
+    box-shadow: 0 4px 22px rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =======================
+   BRAND
+   ======================= */
+.brand {
+  font-size: 1.7rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, $blue, $purple);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 18px rgba(124, 58, 237, 0.4);
+}
+
+/* =======================
+   DESKTOP LINKS
+   ======================= */
+.nav-links.desktop {
+  display: flex;
+  gap: 28px;
+
+  li {
+    list-style: none;
   }
 
-  .brand-text {
-    color: #e6eef8;
-    font-weight: 700;
-    margin-left: 0.6rem;
-    letter-spacing: 0.2px;
-    font-size: 1.15rem;
-  }
+  a {
+    color: $text-light;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.25s ease;
+    position: relative;
 
-  /* Right Side Nav Items */
-  .nav-right {
-    gap: 0.8rem;
-
-    .nav-link {
-      color: rgba(230,238,248,0.85) !important;
-      font-weight: 500;
-      transition: color .18s ease, transform .12s ease;
-
-      &:hover {
-        color: $indigo-500 !important;
-        transform: translateY(-1px);
-      }
+    &:hover {
+      color: $blue;
+      text-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
     }
 
-    .resume-link {
-      color: $text-muted;
-      padding: 0.45rem 0.7rem;
+    &.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, $purple, $blue);
       border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .15s ease, color .12s ease;
-
-      &:hover {
-        background: rgba(99,102,241,0.08);
-        color: $indigo-500;
-      }
+      box-shadow: 0 0 10px rgba(124,58,237,0.6);
     }
+  }
 
-    .hire-btn {
-      background: linear-gradient(90deg, $indigo-500, $purple-500);
-      border: none;
-      box-shadow: 0 6px 20px rgba(99,102,241,0.16);
-      padding: 0.5rem 1.05rem;
-      font-weight: 700;
-      border-radius: 8px;
+  .hire-btn {
+    background: linear-gradient(90deg, $indigo, $purple);
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: white !important;
+    box-shadow: 0 4px 18px rgba(99,102,241,0.3);
 
-      &:hover {
-        filter: brightness(.96);
-        transform: translateY(-1px);
+    &:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.07);
+    }
+  }
+}
+
+/* =======================
+   HAMBURGER
+   ======================= */
+.hamburger {
+  width: 28px;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  span {
+    height: 3px;
+    width: 100%;
+    background: $blue;
+    border-radius: 3px;
+    transition: 0.2s ease;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-links.desktop {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* =======================
+   CURTAIN MENU
+   ======================= */
+.curtain-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: $bg-card;
+  padding: 22px;
+  box-shadow: 4px 0 25px rgba(0,0,0,0.45);
+  transition: 0.4s ease;
+  z-index: 4000;
+  display: flex;
+  flex-direction: column;
+
+  &.open {
+    left: 0;
+  }
+
+  .close-btn {
+    font-size: 44px;
+    background: none;
+    border: none;
+    color: $blue;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+
+    li {
+      margin: 20px 0;
+
+      a {
+        color: $text-light;
+        font-size: 1.25rem;
+        text-decoration: none;
+        transition: 0.25s ease;
+
+        &:hover {
+          color: $purple;
+          text-shadow: 0 0 14px rgba(124,58,237,0.6);
+        }
       }
     }
   }
 
-  /* Mobile tweaks */
-  @media (max-width: 991.98px) {
-    .brand-text {
-      display: none;
+  .hire-btn {
+    background: linear-gradient(90deg, $purple, $blue);
+    padding: 10px 20px;
+    color: white !important;
+    border-radius: 8px;
+    margin-top: 12px;
+    display: inline-block;
+    font-weight: 700;
+    box-shadow: 0 4px 18px rgba(59,130,246,0.35);
+  }
+}
+
+/* =======================
+   BACKDROP
+   ======================= */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(4px);
+  z-index: 3500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>Home>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0f24 0%, #121735 100%);
+  color: #fff;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+  }
+}
+
+.hero-content {
+  max-width: 620px;
+  z-index: 2;
+
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+
+    .name {
+      background: linear-gradient(45deg, #4f5bff, #ac4bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+  }
 
-    .pg-logo {
-      width: 42px;
-      height: 42px;
-    }
+  h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    color: #b8b8ff;
+    font-weight: 400;
+  }
 
-    .nav-right {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+  p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #c9c9dd;
+    line-height: 1.6;
+  }
+}
 
-      .resume-link {
-        display: inline-block;
-        padding: 0.6rem 0.9rem;
+.hero-buttons {
+  margin-top: 35px;
+
+  .btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    margin-right: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+
+    &.primary {
+      background: linear-gradient(45deg, #4f5bff, #ac4bff);
+      color: white;
+      box-shadow: 0 0 15px rgba(98, 0, 255, 0.4);
+
+      &:hover {
+        box-shadow: 0 0 25px rgba(125, 90, 255, 0.6);
+        transform: translateY(-3px);
       }
+    }
 
-      .hire-btn {
-        width: 100%;
-        margin-top: 0.5rem;
+    &.secondary {
+      border: 2px solid #6b6eff;
+      color: #b3b2ff;
+
+      &:hover {
+        background: rgba(90, 80, 255, 0.15);
+        transform: translateY(-3px);
       }
     }
+  }
+}
+
+.hero-graphic {
+  position: relative;
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 6s infinite ease-in-out;
+
+    &.one {
+      width: 260px;
+      height: 260px;
+      background: #4f5bff;
+      top: -40px;
+      right: 0;
+    }
+
+    &.two {
+      width: 200px;
+      height: 200px;
+      background: #ac4bff;
+      bottom: 40px;
+      right: 160px;
+      animation-delay: 1.6s;
+    }
+
+    &.three {
+      width: 160px;
+      height: 160px;
+      background: #6737ff;
+      top: 50%;
+      left: 50px;
+      animation-delay: 2.4s;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
   }
 }

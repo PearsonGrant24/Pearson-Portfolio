@@ -1,53 +1,62 @@
-// components/Navbar/AppNavbar.jsx
-import React from 'react';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-// import './AppNavbar.scss';
+import React, { useState, useEffect } from "react";
+// import "./Navbar.scss";
 
-const LOGO_SRC = '/mnt/data/2247e24b-e406-491f-a683-18a63a42519c.png';
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-export default function AppNavbar() {
+  // Add shadow on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" className="pg-navbar" sticky="top">
-      <Container>
+    <nav className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
+      <div className="nav-wrapper container">
+        
+        {/* Brand */}
+        <div className="brand">Pearson Grant</div>
 
-        {/* Left Side Brand */}
-        <Navbar.Brand href="/" className="d-flex align-items-center">
-          <img
-            src={LOGO_SRC}
-            alt="Pearson Grant logo"
-            className="pg-logo"
-            width="44"
-            height="44"
-          />
-          <span className="brand-text">Pearson Grant</span>
-        </Navbar.Brand>
+        {/* Mobile Toggle */}
+        <div className="hamburger" onClick={() => setOpen(true)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-        {/* Mobile Menu Toggle */}
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        {/* Desktop Links */}
+        <ul className="nav-links desktop">
+          <li><a href="#home" className="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/resume.pdf">Resume</a></li>
+          <li><a className="hire-btn" href="#hire">Hire Me</a></li>
+        </ul>
+      </div>
 
-        {/* Right Side Nav Items */}
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto align-items-lg-center nav-right">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+      {/* CURTAIN MENU */}
+      <div className={`curtain-menu ${open ? "open" : ""}`}>
+        <button className="close-btn" onClick={() => setOpen(false)}>
+          &times;
+        </button>
 
-            <a href="/resume.pdf" className="resume-link" target="_blank" rel="noreferrer">
-              Resume
-            </a>
+        <ul>
+          <li onClick={() => setOpen(false)}><a href="#home">Home</a></li>
+          <li onClick={() => setOpen(false)}><a href="#about">About</a></li>
+          <li onClick={() => setOpen(false)}><a href="#projects">Projects</a></li>
+          <li onClick={() => setOpen(false)}><a href="#contact">Contact</a></li>
+          <li onClick={() => setOpen(false)}><a href="/resume.pdf">Resume</a></li>
+          <li onClick={() => setOpen(false)}><a className="hire-btn" href="#hire">Hire Me</a></li>
+        </ul>
+      </div>
 
-            <Button
-              variant="primary"
-              className="ms-lg-3 hire-btn"
-              href="#contact"
-            >
-              Hire Me
-            </Button>
-          </Nav>
-        </Navbar.Collapse>
-
-      </Container>
-    </Navbar>
+      {/* CURTAIN SHADOW BACKDROP */}
+      {open && <div className="backdrop" onClick={() => setOpen(false)}></div>}
+    </nav>
   );
 }
