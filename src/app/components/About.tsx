@@ -1,182 +1,168 @@
-import React, {useEffect, useRef, useState } from "react";
-import { HomePageSlider } from './layout/widgets/sliders/HomePageSlider.tsx'
+import React from "react";
+// import "./About.scss";
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  Mail,
+  Briefcase,
+  FolderKanban,
+} from "lucide-react";
 
-export default function About() {
-    const lineRef = useRef(null);
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    if (!lineRef.current) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setAnimate(true);
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-    obs.observe(lineRef.current);
-    return () => obs.disconnect();
-  }, []); 
-
+const About = () => {
   return (
-    <>    
-    {/* <HomePageSlider/> */}
+    <div className="about-wrapper">
 
-     <section className="solutions-highlight py-5">
-  <div className="container">
-    <div className="row align-items-center">
-      
-      {/* Left: Main Image */}
-      <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-        <img 
-          src="assets/elements/img/solar1.png" 
-          alt="Willez Solutions" 
-          className="img-fluid rounded shadow"
-        />
-      </div>
-
-      {/* Right: Text + Two Images */}
-      <div className="col-12 col-lg-6">
-        <h2 className="fw-bold mb-3">
-          Delivering Good Quality Products for the Country
-        </h2>
-        <p className="lead mb-4">
-          We specialise in all electrical power supplies, reliable solar 
-          solutions that combine efficiency, durability, installations and 
-          innovation to power a brighter future. Our commitment is to bring 
-          sustainable energy to communities nationwide.
-        </p>
-
-        {/* Small image aligned right */}
-        <div className="text-end mb-3">
-          <img 
-            src="assets/elements/img/solar3.png" 
-            alt="Supporting solar system small" 
-            className="img-fluid rounded shadow-sm" 
-            style={{ maxWidth: "220px" }}
-          />
-        </div>
-
-        {/* Mid-sized image below */}
-        <div>
-          <img 
-            src="assets/elements/img/solar2.png" 
-            alt="Supporting solar system mid" 
-            className="img-fluid rounded shadow-sm" 
-            style={{ maxWidth: "380px" }}
-          />
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-   
-
-    <section className="teamup-section text-white">
-      <div className="container py-5">
-        <div className="row align-items-center">
-          {/* Left side: text */}
-          <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-            <h2 className="fw-bold mb-3">Working Together at Willez</h2>
+      {/* ================= HEADER SECTION ================= */}
+      <section className="about-header">
+        <div className="header-content">
+          <motion.div
+            className="header-text"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1>About Me</h1>
             <p>
-              At Willez, we believe in teaming up as one organisation to deliver
-              excellence. From ideation to execution, our collaborative approach
-              ensures that quality, sustainability, and innovation are at the
-              heart of every product we make.
+              I am a DevOps Engineer who builds scalable cloud infrastructure,
+              automates deployments, and improves system reliability using modern
+              DevOps tools. With experience across AWS, CI/CD, containerization,
+              Kubernetes, IaC, and monitoring, I help companies move faster,
+              deploy safer, and operate more efficiently.
             </p>
+            
+
+        {/* Quick Info Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+
+          {/* Location */}
+          <div className="flex flex-col items-center">
+            <MapPin className="text-yellow-400 mb-3" size={32} />
+            <h3 className="font-semibold text-gray-200">Location</h3>
+            <p className="text-white mt-1">Harare, Zimbabwe</p>
           </div>
 
-          {/* Right side: four staggered images */}
-          <div className="col-12 col-lg-6">
-            <div className="row image-grid">
-              <div className="col-6 mb-3 mb-lg-0">
-                <img
-                  src="./assets/elements/img/working-together-1.jpg"
-                  alt="Team Member 1"
-                  className="img-fluid stagger-up rounded shadow-sm"
-                />
-              </div>
-              <div className="col-6 mb-3 mb-lg-0">
-                <img
-                  src="./assets/elements/img/solar3.png"
-                  alt="Team Member 2"
-                  className="img-fluid stagger-down rounded shadow-sm"
-                />
-              </div>
-              <div className="col-6 mt-lg-5">
-                <img
-                  src="./assets/elements/img/solar3.png"
-                  alt="Team Member 3"
-                  className="img-fluid stagger-down rounded shadow-sm"
-                />
-              </div>
-              <div className="col-6 mt-lg-5">
-                <img
-                  src="./assets/elements/img/team-work-2.jpg"
-                  alt="Team Member 4"
-                  className="img-fluid-one stagger-up rounded
-                   shadow-sm mg-fluid position-absolute bottom-0 start-0"
-                />
-              </div>
-            </div>
-            
-            <div
-              className={`line-wrapper mt-3 ${animate ? "animate" : ""}`}
-              ref={lineRef}
-              aria-hidden="true"
-            >
-              <div className="about-line-slant-1"></div> 
-              <div className="about-line-slant-2"></div>
-              <div className="vertical-line-about-2"></div>
-              <div className="line-container-about">
-              <div className="about-line-slant-down-2"></div>
-              <div className="vertical-line-about"></div>
-              <div className="about-line-slant-down-1"></div>
-              </div>
-            </div>
+          {/* Email */}
+          <div className="flex flex-col items-center">
+            <Mail className="text-yellow-400 mb-3" size={32} />
+            <h3 className="font-semibold text-gray-200">Email</h3>
+            <p className="text-white mt-1">pearsongrant23@gmail.com</p>
+          </div>
 
+          {/* Experience */}
+          <div className="flex flex-col items-center">
+            <Briefcase className="text-yellow-400 mb-3" size={32} />
+            <h3 className="font-semibold text-gray-200">Experience</h3>
+            <p className="text-white mt-1">4+ Years</p>
+          </div>
+
+          {/* Projects */}
+          <div className="flex flex-col items-center">
+            <FolderKanban className="text-yellow-400 mb-3" size={32} />
+            <h3 className="font-semibold text-gray-200">Projects Completed</h3>
+            <p className="text-white mt-1">15+ Projects</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section className="py-5 bg-light text-dark">
-      <div className="container text-center">
-        <h2 className="fw-bold mb-4">Our Purpose & Vision</h2>
-        <p className="lead mx-auto" style={{ maxWidth: "800px" }}>
-          At Willez, our purpose is to empower communities with reliable, 
-          sustainable, and innovative energy solutions.  
-          <br />
-          Our vision is to lead the way in transforming the energy landscape,
-          ensuring a brighter and greener future for generations to come.
-        </p>
-      </div>
-    </section>
+          </motion.div>
 
-    <section
-      className="parallax-section text-center text-white d-flex align-items-center justify-content-center"
-      style={{
-        backgroundImage: "url('assets/elements/img/solar-roof.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed", // makes the background "stay" while scrolling
-        minHeight: "90vh",
-        }}
-      >
-        <div className="container">
-        <h1 className="display-4 fw-bold mb-3">A Class & Market-Certified Solution</h1>
-        <p className="lead mb-0">
-          High-performance solar technology designed for modern energy needs.
-        </p>
-      </div>
-    </section>
-       
-    </>
-  )
-}
+          <motion.div
+            className="header-image"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <img src="assets/elements/img/pearson.jpg" alt="Pearson Grant" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ================= SKILLS SECTION ================= */}
+      <section className="skills-section">
+        <h2>My Skills</h2>
+        <p>These are the primary skills and technologies I utilize in my work.</p>
+
+        <div className="skills-grid">
+
+          <div className="skill-card">
+            <div className="icon">☁️</div>
+            <h3>Cloud Platforms</h3>
+            <p>AWS, Azure</p>
+          </div>
+
+          <div className="skill-card">
+            <div className="icon">⚙️</div>
+            <h3>CI/CD</h3>
+            <p>GitLab, Jenkins, GitHub Actions</p>
+          </div>
+
+          <div className="skill-card">
+            <div className="icon">📦</div>
+            <h3>Containerization</h3>
+            <p>Docker, Kubernetes</p>
+          </div>
+
+          <div className="skill-card">
+            <div className="icon">📐</div>
+            <h3>Infrastructure as Code</h3>
+            <p>Terraform, CloudFormation</p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= EXPERIENCE SECTION ================= */}
+      <section className="experience-section">
+        <h2>Experience</h2>
+        <p>A brief overview of my professional experience.</p>
+
+        {/* EXPERIENCE LIST */}
+        <div className="experience-list">
+
+          <div className="experience-card">
+            <div>
+              <h3>DevOps Engineer</h3>
+              <span className="company">CargoSummit</span>
+              <ul>
+                <li>Built GitLab CI/CD pipelines for APIs and microservices.</li>
+                <li>Developed Terraform IaC modules (EKS, VPC, RDS, IAM).</li>
+                <li>Implemented pipeline quality gates + security checks.</li>
+                <li>Created monitoring dashboards using Grafana & Prometheus.</li>
+              </ul>
+            </div>
+            <span className="duration">2025 – Present</span>
+          </div>
+
+          <div className="experience-card">
+            <div>
+              <h3>DevOps Engineer</h3>
+              <span className="company">Mambos Chicken</span>
+              <ul>
+                <li>Automated deployments with Jenkins pipelines.</li>
+                <li>Deployed apps using Docker, ECS & Kubernetes.</li>
+                <li>Integrated SonarQube for code scanning.</li>
+                <li>Improved system reliability using logging + alerting.</li>
+              </ul>
+            </div>
+            <span className="duration">2024</span>
+          </div>
+
+          <div className="experience-card">
+            <div>
+              <h3>Software Developer</h3>
+              <span className="company">Willez Engineering</span>
+              <ul>
+                <li>Developed backend features (Python, Java, Node.js).</li>
+                <li>Wrote automation scripts in Python.</li>
+                <li>Performed API testing & release validation.</li>
+              </ul>
+            </div>
+            <span className="duration">2021 – 2023</span>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default About;
