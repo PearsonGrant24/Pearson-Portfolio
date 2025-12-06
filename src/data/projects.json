@@ -1,0 +1,35 @@
+[
+  {
+    "id": "eks-super-mario",
+    "title": "Chatgpt clone deployment on EKS",
+    "subtitle": "Implemented a CI/CD pipeline & Pipeline Orchestration",
+    "description": "Deployed a scalable microservices app with Kubernetes and CI/CD pipelines.",
+    "technologies": ["Kubernetes", "Helm", "Docker"],
+    "coverImage": "assets/elements/img/projects/ci-pipeline.png",
+    "category": "AWS",
+    "github": "https://github.com/pearsongrant24/super-mario-eks",
+    "caseStudyUrl": "/case-study/eks-super-mario"
+  },
+  {
+    "id": "ta-jenkins",
+    "title": "Terraform + Ansible + Jenkins CI/CD Automation",
+    "subtitle": "Ansible Automation & Pipeline Orchestration",
+    "description": "End-to-end infrastructure provisioning, configuration and deployment using Terraform, Ansible and Jenkins.",
+    "technologies": ["Terraform", "Ansible", "Jenkins", "AWS"],
+    "coverImage": "assets/elements/img/projects/pro-structure.png",
+    "category": "Software",
+    "github": "https://github.com/pearsongrant24/ta-jenkins",
+    "caseStudyUrl": "/case-study/terraform-ansible-jenkins"
+  },
+  {
+    "id": "eks-super-mario",
+    "title": "Super Mario Deployment on EKS",
+    "subtitle": "Infrastructure Automation & Pipeline Orchestration",
+    "description": "Deployed a scalable microservices app with Kubernetes and CI/CD pipelines.",
+    "technologies": ["Kubernetes", "Helm", "Docker"],
+    "coverImage": "assets/elements/img/projects/ci-pipeline.png",
+    "category": "Software",
+    "github": "https://github.com/pearsongrant24/super-mario-eks",
+    "caseStudyUrl": "/case-study/eks-super-mario"
+  }
+]

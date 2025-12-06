@@ -8,73 +8,110 @@ import {
   FolderKanban,
 } from "lucide-react";
 
+
+
 const About = () => {
+
+  React.useEffect(() => {
+  const counters = document.querySelectorAll(".counter");
+  counters.forEach((counter: any) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText.replace(/\D/g, "");
+
+      const increment = target / 40;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment) + "+";
+        requestAnimationFrame(updateCount);
+      } else {
+        counter.innerText = target + "+";
+      }
+    };
+
+    updateCount();
+    });
+  }, []);
+
   return (
     <div className="about-wrapper">
 
-      {/* ================= HEADER SECTION ================= */}
-      <section className="about-header">
-        <div className="header-content">
-          <motion.div
-            className="header-text"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1>About Me</h1>
-            <p>
-              I am a DevOps Engineer who builds scalable cloud infrastructure,
-              automates deployments, and improves system reliability using modern
-              DevOps tools. With experience across AWS, CI/CD, containerization,
-              Kubernetes, IaC, and monitoring, I help companies move faster,
-              deploy safer, and operate more efficiently.
-            </p>
-            
+     
+{/* ================= HEADER SECTION ================= */}
+<section className="about-header">
+  <div className="header-glow"></div>
 
-        {/* Quick Info Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+  <div className="header-content">
+    <motion.div
+      className="header-text"
+      initial={{ opacity: 0, x: -40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h1>About Me</h1>
 
-          {/* Location */}
-          <div className="flex flex-col items-center">
-            <MapPin className="text-yellow-400 mb-3" size={32} />
-            <h3 className="font-semibold text-gray-200">Location</h3>
-            <p className="text-white mt-1">Harare, Zimbabwe</p>
-          </div>
+      <p>
+        I am a DevOps Engineer who builds scalable cloud infrastructure,
+        automates deployments, and improves system reliability using modern
+        DevOps tools. With experience across AWS, CI/CD, containerization,
+        Kubernetes, IaC, and monitoring, I help companies move faster,
+        deploy safer, and operate more efficiently.
+      </p>
 
-          {/* Email */}
-          <div className="flex flex-col items-center">
-            <Mail className="text-yellow-400 mb-3" size={32} />
-            <h3 className="font-semibold text-gray-200">Email</h3>
-            <p className="text-white mt-1">pearsongrant23@gmail.com</p>
-          </div>
-
-          {/* Experience */}
-          <div className="flex flex-col items-center">
-            <Briefcase className="text-yellow-400 mb-3" size={32} />
-            <h3 className="font-semibold text-gray-200">Experience</h3>
-            <p className="text-white mt-1">4+ Years</p>
-          </div>
-
-          {/* Projects */}
-          <div className="flex flex-col items-center">
-            <FolderKanban className="text-yellow-400 mb-3" size={32} />
-            <h3 className="font-semibold text-gray-200">Projects Completed</h3>
-            <p className="text-white mt-1">15+ Projects</p>
-          </div>
+      {/* ===== INFO GRID ===== */}
+      <div className="info-grid">
+        <div className="info-card">
+          <svg className="icon" stroke="#facc15" fill="none" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 11c1.657 0 3-1.567 3-3.5S13.657 4 12 4s-3 1.567-3 3.5S10.343 11 12 11z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5.5 21a8.38 8.38 0 0113 0" />
+          </svg><br/>
+          <span className="label">Location</span><br/>
+          <span className="value">Harare,Zimbabwe</span>
         </div>
 
-          </motion.div>
-
-          <motion.div
-            className="header-image"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <img src="assets/elements/img/pearson.jpg" alt="Pearson Grant" />
-          </motion.div>
+        <div className="info-card">
+          <svg className="icon" stroke="#38bdf8" fill="none" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16v16H4z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 4l8 8 8-8" />
+          </svg><br/>
+          <span className="label">Email</span><br/>
+          <span className="value">pearsongrant23@gmail.com</span>
         </div>
-      </section>
+
+        <div className="info-card">
+          <svg className="icon" stroke="#a78bfa" fill="none" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7h18v10H3z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9 6 9-6" />
+          </svg>
+          <span className="label">Experience</span>
+          <span className="value counter" data-target="4">0+ Years</span>
+        </div>
+
+        <div className="info-card">
+          <svg className="icon" stroke="#fb7185" fill="none" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7h18M3 12h18M3 17h18" />
+          </svg>
+          <span className="label">Projects</span>
+          <span className="value counter" data-target="15">0+ Completed</span>
+        </div>
+      </div>
+      {/* ===== END INFO GRID ===== */}
+
+    </motion.div>
+
+    <motion.div
+      className="header-image"
+      initial={{ opacity: 0, x: 40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <div className="image-glow">
+        <img src="/assets/elements/img/pearson.jpg" alt="Pearson Grant" />
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* ================= SKILLS SECTION ================= */}
       <section className="skills-section">

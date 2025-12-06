@@ -7,7 +7,9 @@ import GetinTouch from '../components/GetinTouch.tsx';
 import SolarProducts from '../components/SolarProducts.tsx';
 import Technology from '../components/Technology.tsx';
 import Solutions from '../components/Solutions.tsx';
-
+import ProjectsPage from '../components/ProjectsPage.tsx';
+import TerraformAnsible from '../components/CaseStudies/TerraformAnsible.tsx'
+import AdminDashboard from '../components/AdminDashboard.tsx'
 
 const RoutePath = () => {
  
@@ -19,10 +21,12 @@ const RoutePath = () => {
         <Route path="/" element={<Home />} />
 		<Route path="/Home" element={<Home />} />
 		<Route path="/About" element={<About />} />
-		<Route path="/GetinTouch" element={<GetinTouch />} />
-		<Route path="/SolarProducts" element={<SolarProducts />} />
+		<Route path="/ProjectsPage" element={<ProjectsPage />} />
+		<Route path="/TerraformAnsible" element={<TerraformAnsible />} />
 		<Route path="/technology" element={<Technology/>} />
 		<Route path="/Solutions" element={<Solutions/>} />
+		<Route path="/SolarProducts" element={<SolarProducts/>} />
+		<Route path="/AdminDashboard" element={<AdminDashboard/>} />
 
         </Routes>
 		
