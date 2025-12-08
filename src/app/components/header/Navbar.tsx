@@ -32,7 +32,7 @@ export default function Navbar() {
         <ul className="nav-links desktop">
           <li><a href="Home" className="active">Home</a></li>
           <li><a href="About">About</a></li>
-          <li><a href="Project">Projects</a></li>
+          <li><a href="ProjectsPage">Projects</a></li>
           <li><a href="Contact">Contact</a></li>
           <li><a href="/resume.pdf">Resume</a></li>
           <li><a className="hire-btn" href="#hire">Hire Me</a></li>
