@@ -1,149 +1,90 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+// import "./AdminDashboard.scss";
 
-export default function AdminDashboard() {
-  const [projects, setProjects] = useState([]);
-  const [newProject, setNewProject] = useState({ title: "", description: "", image: "" });
+const AdminDashboard = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [toolsUsed, setToolsUsed] = useState<string[]>([]);
+  const [github, setGithub] = useState("");
+  const [liveDemo, setLiveDemo] = useState("");
 
-  const load = async () => {
-    const res = await fetch("/projects.json");
-    const data = await res.json();
-    setProjects(data);
+  const handleAddTool = (tool: string) => {
+    if (!toolsUsed.includes(tool)) {
+      setToolsUsed([...toolsUsed, tool]);
+    }
   };
 
-  const save = async (updatedData: any) => {
-    await fetch("http://localhost:3000/save", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedData),
-    });
+  const handleSubmit = async () => {
+    if (!title || !description) {
+      alert("Title and description are required.");
+      return;
+    }
 
-    load();
+    try {
+      const response = await fetch("http://localhost:5000/projects", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title,
+          description,
+          toolsUsed,
+          github,
+          liveDemo,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Failed to save project");
+
+      alert("Project added successfully!");
+
+      setTitle("");
+      setDescription("");
+      setToolsUsed([]);
+      setGithub("");
+      setLiveDemo("");
+    } catch (err) {
+      console.error(err);
+      alert("Error adding project");
+    }
   };
-
-  const addProject = () => {
-    if (!newProject.title) return alert("Project title required!");
-    save([...projects, newProject]);
-    setNewProject({ title: "", description: "", image: "" });
-  };
-
-  const deleteProject = (index: number) => {
-    if (!window.confirm("Delete this project?")) return;
-    save(projects.filter((_, i) => i !== index));
-  };
-
-  useEffect(() => {
-    load();
-  }, []);
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Admin Dashboard</h1>
+    <div className="admin-wrapper">
+      <h1>🛠 Admin Dashboard</h1>
+      <p>Add new portfolio projects here.</p>
 
-      {/* CREATE FORM */}
-      <div style={styles.card}>
-        <h2 style={styles.sectionTitle}>Create New Project</h2>
+      <div className="admin-card">
+        <label>Project Title</label>
+        <input value={title} onChange={(e) => setTitle(e.target.value)} />
 
-        <input
-          style={styles.input}
-          placeholder="Project Title"
-          value={newProject.title}
-          onChange={(e) => setNewProject({ ...newProject, title: e.target.value })}
-        />
+        <label>Description</label>
+        <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
 
-        <textarea
-          style={{ ...styles.input, height: 80 }}
-          placeholder="Project Description"
-          value={newProject.description}
-          onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
-        />
-
-        <input
-          style={styles.input}
-          placeholder="Image URL"
-          value={newProject.image}
-          onChange={(e) => setNewProject({ ...newProject, image: e.target.value })}
-        />
-
-        <button style={styles.buttonPrimary} onClick={addProject}>
-          ➕ Add Project
-        </button>
-      </div>
-
-      {/* PROJECT LIST */}
-      <h2 style={styles.sectionTitle}>Manage Projects</h2>
-
-      <div>
-        {projects.map((project: any, index: number) => (
-          <div key={index} style={styles.projectRow}>
-            <div>
-              <strong>{project.title}</strong>
-              <p style={{ margin: 0, opacity: 0.6 }}>{project.description}</p>
-            </div>
-
-            <button style={styles.buttonDanger} onClick={() => deleteProject(index)}>
-              🗑 Delete
+        <label>Tools (click to add)</label>
+        <div className="tool-buttons">
+          {["React", "Node.js", "Terraform", "AWS", "Ansible", "Docker", "Jenkins"].map((tool) => (
+            <button key={tool} onClick={() => handleAddTool(tool)}>
+              {tool}
             </button>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <div className="selected-tools">
+          {toolsUsed.map((tool) => (
+            <span key={tool} className="tool-pill">{tool}</span>
+          ))}
+        </div>
+
+        <label>GitHub Link</label>
+        <input value={github} onChange={(e) => setGithub(e.target.value)} />
+
+        <label>Live Demo URL</label>
+        <input value={liveDemo} onChange={(e) => setLiveDemo(e.target.value)} />
+
+        <button className="save-btn" onClick={handleSubmit}>Add Project</button>
       </div>
     </div>
   );
-}
-
-const styles = {
-  container: {
-    maxWidth: 900,
-    margin: "40px auto",
-    padding: "20px",
-    fontFamily: "Arial, sans-serif",
-  },
-  title: {
-    textAlign: "center",
-    fontSize: 28,
-    marginBottom: 30,
-  },
-  sectionTitle: {
-    fontSize: 20,
-    marginBottom: 15,
-    marginTop: 30,
-  },
-  card: {
-    background: "#fff",
-    padding: 20,
-    borderRadius: 10,
-    boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-    marginBottom: 40,
-  },
-  input: {
-    width: "100%",
-    padding: 10,
-    marginBottom: 15,
-    borderRadius: 6,
-    border: "1px solid #ddd",
-  },
-  buttonPrimary: {
-    background: "#007bff",
-    color: "#fff",
-    padding: "10px 20px",
-    border: "none",
-    borderRadius: 6,
-    cursor: "pointer",
-  },
-  projectRow: {
-    background: "#fafafa",
-    padding: 15,
-    marginBottom: 10,
-    borderRadius: 8,
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  buttonDanger: {
-    background: "#ff4444",
-    color: "white",
-    padding: "8px 15px",
-    borderRadius: 6,
-    border: "none",
-    cursor: "pointer",
-  },
 };
+
+export default AdminDashboard;

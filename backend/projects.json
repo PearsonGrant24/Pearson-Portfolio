@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Deployment on Azure",
+    "description": "This project illustrates the understanding of how Kubernetes work on Azure . ",
+    "toolsUsed": [
+      "Terraform",
+      "AWS",
+      "Docker",
+      "Jenkins"
+    ],
+    "github": "https://github.com/pearsongrant23@gmail.com",
+    "liveDemo": "null",
+    "id": 1765226215460
+  }
+]
