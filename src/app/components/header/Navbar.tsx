@@ -34,8 +34,8 @@ export default function Navbar() {
           <li><a href="About">About</a></li>
           <li><a href="ProjectsPage">Projects</a></li>
           <li><a href="ContactPage">Contact</a></li>
-          <li><a href="/resume.pdf">Resume</a></li>
-          <li><a className="hire-btn" href="#hire">Hire Me</a></li>
+          <li><a href="ResumePage">Resume</a></li>
+          <li><a className="hire-btn" href="HireMePage">Hire Me</a></li>
         </ul>
       </div>
 
