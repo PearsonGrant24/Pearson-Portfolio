@@ -1,196 +1,181 @@
-// import React, { useMemo, useState } from "react";
-// // import "./Projects.scss";
+import React, { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+//import "../styles/ProjectsPage.scss";
 
-// type Project = {
-//   id: string;
-//   title: string;
-//   category: "Software" | "Design" | "Marketing" | "Scratch";
-//   description: string;
-//   tech: string[];
-//   image: string;
-//   iconColor: string; // accent color for the icon
-// };
+type Project = {
+  id: string;
+  title: string;
+  shortDescription?: string;
+  category?: string[];
+  details?: {
+    implementation?: string;
+    results?: string;
+    images?: string[];
+  };
+  technologies?: string[];
+  github?: string;
+  demo?: string;
+  coverImage?: string;
+  createdAt?: number;
+  updatedAt?: number;
+};
 
-// const PROJECTS: Project[] = [
-//   {
-//     id: "p1",
-//     title: "Chatgpt clone deloyment on EKS ",
-//     category: "Software",
-//     description:
-//       "Implemented a CI/CD pipeline for automated testing and deployment.",
-//     tech: ["Jenkins", "Docker", "Kubernetes"],
-//     image: "/assets/elements/img/projects/ci-pipeline.png",
-//     iconColor: "#FF6B6B",
-//   },
-//   {
-//     id: "p2",
-//     title: "Terraform–Ansible Multi-Server Deployment (AWS)",
-//     category: "Software",
-//     description: "Designed and deployed cloud infrastructure using Terraform.",
-//     tech: ["Terraform", "AWS"],
-//     image: "/assets/elements/img/projects/pro-structure.png",
-//     iconColor: "#5B8CFF",
-//   },
-//   {
-//     id: "p3",
-//     title: "Super Mario Deployment on EKS",//"Microservices Deployment",
-//     category: "Software",
-//     description: "Deployed a scalable microservices app with Kubernetes.",
-//     tech: ["Kubernetes", "Helm"],
-//     image: "/assets/elements/img/projects/supermario.jpeg",
-//     iconColor: "#8A5CFF",
-//   },
-//   {
-//     id: "p4",
-//     title: "Product Flyer Design",
-//     category: "Design",
-//     description: "High-conversion marketing flyer for product launches.",
-//     tech: ["Canva", "Photoshop"],
-//     image: "/images/projects/flyer-design.jpg",
-//     iconColor: "#FFB86B",
-//   },
-//   {
-//     id: "p5",
-//     title: "Social Campaign",
-//     category: "Marketing",
-//     description: "Social media marketing campaign that boosted engagement.",
-//     tech: ["Meta", "Ads", "Google Analytics"],
-//     image: "/images/projects/social-campaign.jpg",
-//     iconColor: "#32D4D4",
-//   },
-//   {
-//     id: "p6",
-//     title: "Educational Game",
-//     category: "Scratch",
-//     description: "Interactive educational programming activity for children.",
-//     tech: ["Scratch"],
-//     image: "/images/projects/scratch-game.jpg",
-//     iconColor: "#FF7BD4",
-//   },
-// ];
-
-// const CATEGORIES = ["All", "Software", "Design", "Marketing", "Scratch"] as const;
-
-// export default function Projects(): JSX.Element {
-//   const [filter, setFilter] = useState<typeof CATEGORIES[number]>('All');
-
-//   const filtered = useMemo(() => {
-//     if (filter === "All") return PROJECTS;
-//     return PROJECTS.filter((p) => p.category === filter);
-//   }, [filter]);
-
-//   return (
-//     <section className="projects-section" id="projects">
-//       <div className="projects-inner container">
-//         <header className="projects-header">
-//           <h2>My Work Portfolio</h2>
-//           <p className="subtitle">
-//             Explore recent work across DevOps, software, design and marketing.
-//           </p>
-
-//           <div className="filters" role="tablist" aria-label="Project categories">
-//             {CATEGORIES.map((c) => (
-//               <button
-//                 key={c}
-//                 className={`filter-btn ${filter === c ? "active" : ""}`}
-//                 onClick={() => setFilter(c)}
-//                 aria-pressed={filter === c}
-//               >
-//                 {c}
-//               </button>
-//             ))}
-//           </div>
-//         </header>
-
-//         <div className="grid">
-//           {filtered.map((p) => (
-//             <article key={p.id} className="project-card" tabIndex={0}>
-//               <div className="card-media">
-//                 <img src={p.image} alt={p.title} loading="lazy" />
-//                 <span className="badge">{p.category}</span>
-//               </div>
-
-//               <div className="card-body">
-//                 {/* <div className="card-icon" style={{ background: `linear-gradient(135deg, ${p.iconColor}, rgba(0,0,0,0.05))` }}>
-//                    simple SVG "stack" icon tuned to color 
-//                   <svg viewBox="0 0 24 24" aria-hidden>
-//                     <rect x="3" y="5" width="18" height="3" rx="1.2" fill="#fff" opacity="0.95"></rect>
-//                     <rect x="6" y="11" width="12" height="3" rx="1.2" fill="#fff" opacity="0.95"></rect>
-//                     <rect x="9" y="17" width="6" height="3" rx="1.2" fill="#fff" opacity="0.95"></rect>
-//                   </svg>
-//                 </div> */}
-
-//                 <h3 className="card-title">{p.title}</h3>
-//                 <p className="card-desc">{p.description}</p>
-
-//                 {/* <p className="card-tech">{p.tech}</p> */}
-//                 <div className="card-tech-list">
-//                   {p.tech.map((t) => (
-//                     <span className="tech-pill" key={t}>{t}</span>
-//                   ))}
-//                 </div>
-
-//                 <div className="card-actions">
-//                   <a className="btn-outline" href="TerraformAnsible" onClick={(e)=>e.preventDefault()}>View Case Study</a>
-//                   <a className="btn-primary" href="#" onClick={(e)=>e.preventDefault()}>Portfolio</a>
-//                 </div>
-//               </div>
-//             </article>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
+export default function ProjectsPage(): JSX.Element {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+   const [activeFilter, setActiveFilter] = useState<string>("All");
 
 
-import React, { useMemo, useState } from "react";
-import projectsData from "../../data/projects.json";
-import ProjectCard from "./ProjectCard.tsx";
-// import "../styles/projects.scss";
-
-type Project = typeof projectsData[number];
-
-export default function ProjectsPage() {
-  const [filter, setFilter] = useState<string>("All");
-
-  const categories = useMemo(() => {
-    const set = new Set<string>(projectsData.map((p) => p.category || "Software"));
-    return ["All", ...Array.from(set)];
+  useEffect(() => {
+    setLoading(true);
+    fetch("http://localhost:5000/projects")
+      .then((r) => r.json())
+      .then((data) => setProjects(Array.isArray(data) ? data : []))
+      .catch((e) => {
+        console.error("Failed to fetch projects", e);
+        setProjects([]);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
+  // derive filters from technologies (unique)
+
+  const categories = useMemo(() => {
+  const set = new Set<string> (projects.map((p) => p.category || "Software"));
+    
+    // const set = new Set<string>();
+
+    // projects.forEach((p) => {
+    //   if (Array.isArray(p.category)) {
+    //     p.category.forEach((c) => set.add(c));
+    //   }
+    // });
+
+    return ["All", ...Array.from(set)];
+  }, [projects]);
+
+  // Filtering logic (corrected)
   const filtered = useMemo(() => {
-    if (filter === "All") return projectsData;
-    return projectsData.filter((p) => p.category === filter);
-  }, [filter]);
+    if (activeFilter === "All") return projects;
+
+     return projects.filter((p) => 
+   p.category === activeFilter);
+   // );
+  }, [projects, activeFilter]);
+
+  // const [filter, setFilter] = useState<string>("All");
+
+  // const categories = useMemo(() => {
+  //   const set = new Set<string>
+  // (projects.map((p) => p.category || "Software"));
+  //   return ["All", ...Array.from(set)];
+  // }, []);
+
+  // const filtered = useMemo(() => {
+  //   if (filter === "All") return projects;
+  //   return projects.filter((p) => 
+  // p.category === filter);
+  // }, [filter]);
+
+
+  // const filters = useMemo(() => {
+  //   const set = new Set<string>();
+  //   projects.forEach((p) => p.category .forEach((t) => set.add(t)));
+  //   return ["All", ...Array.from(set)];
+  // }, [projects]);
+
+  // const filtered = useMemo(() => {
+  //   if (activeFilter === "All") return projects;
+  //   return projects.filter((p) => (p.category || []).includes(activeFilter));
+  // }, [projects, activeFilter]);
 
   return (
-    <main className="projects-page">
-      <div className="projects-hero container">
-        <h1>My Work Portfolio</h1>
-        <p className="lead">Explore recent work across DevOps, software, and infrastructure.</p>
+    <div className="pg-projects-page">
+      <div className="pg-hero">
+        <div className="pg-hero-inner container">
+          <h1 className="pg-title">My Work Portfolio</h1>
+          <p className="pg-sub">
+            Explore recent work across DevOps, infrastructure automation, cloud engineering,
+            and software projects — detailed case studies, architecture and outcomes.
+          </p>
 
-        <div className="filter-row" role="tablist" aria-label="project categories">
+          <div className="pg-filters" role="tablist" aria-label="Project filters">
           {categories.map((c) => (
             <button
               key={c}
-              className={`filter-btn ${filter === c ? "active" : ""}`}
-              onClick={() => setFilter(c)}
-              aria-pressed={filter === c}
+              className={`pg-filter-btn ${activeFilter === c ? "active" : ""}`}
+              onClick={() => setActiveFilter(c)}
+              aria-pressed={activeFilter === c}
             >
               {c}
             </button>
           ))}
         </div>
+          
+        </div>
       </div>
 
-      <div className="container">
-        <section className="projects-grid" aria-live="polite">
-          {filtered.map((p: Project) => (
-            <ProjectCard project={p} key={p.id} />
-          ))}
-        </section>
+      <div className="container pg-grid-wrap">
+        {loading ? (
+          <div className="pg-loading">Loading projects…</div>
+        ) : filtered.length === 0 ? (
+          <div className="pg-empty">No projects found.</div>
+        ) : (
+          <div className="pg-grid">
+            {filtered.map((p) => {
+              const image = p.coverImage ?? p.details?.images?.[0] ?? "/placeholder.png";
+              return (
+                <article className="pg-card" key={p.id}>
+
+                  <div className="pg-card-media">
+                    {p.coverImage ? (
+                      <img src={p.coverImage} alt={p.title} loading="lazy" />
+                    ) : (          
+                      <div className="pg-card-media-fallback" />
+                    )}
+                    {p.category && <span className="pg-badge">{p.category}</span>}
+                  </div>
+
+                  <div className="pg-card-body">
+                    <div className="pg-card-meta">
+                      <div className="pg-card-title">{p.title}</div>
+                      <div className="pg-card-sub">{p.shortDescription}</div>
+                    </div>
+
+                    <div className="pg-card-tags">
+                      {(p.technologies || []).map((t) => (
+                        <span className="pg-pill" key={t}>
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="pg-card-actions">
+                      <a
+                        className="pg-btn pg-btn-outline"
+                        href={p.github ?? "#"}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`View code for ${p.title}`}
+                      >
+                        View Code
+                      </a>
+
+                      <Link to={`/CaseStudies/${p.id}`} className="pg-btn pg-btn-primary" aria-label={`Open case study ${p.title}`}>
+                        Case Study
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        )}
       </div>
-    </main>
+    </div>
   );
 }
+
+{/* <div className="pg-category-pill">
+                  {p.category ?? "General"}
+                </div> */}

@@ -37,7 +37,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3 }}
         >
-          <a href="#projects" className="btn primary">View Projects</a>
+          <a href="ProjectsPage" className="btn primary">View Projects</a>
           <a href="#contact" className="btn secondary">Hire Me</a>
         </motion.div>
 

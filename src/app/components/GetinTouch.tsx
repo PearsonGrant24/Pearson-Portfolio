@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import { HomePageSlider } from './layout/widgets/sliders/HomePageSlider.tsx'
+//import { HomePageSlider } from './layout/widgets/sliders/HomePageSlider.tsx'//
 
 export default function GetinTouch() {
 
