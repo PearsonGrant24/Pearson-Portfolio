@@ -30,12 +30,12 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="nav-links desktop">
-          <li><a href="Home" className="active">Home</a></li>
-          <li><a href="About">About</a></li>
-          <li><a href="ProjectsPage">Projects</a></li>
-          <li><a href="ContactPage">Contact</a></li>
-          <li><a href="ResumePage">Resume</a></li>
-          <li><a className="hire-btn" href="HireMePage">Hire Me</a></li>
+          <li><a href="H/ome" className="active">Home</a></li>
+          <li><a href="/About">About</a></li>
+          <li><a href="/ProjectsPage">Projects</a></li>
+          <li><a href="/ContactPage">Contact</a></li>
+          <li><a href="/ResumePage">Resume</a></li>
+          <li><a className="hire-btn" href="/HireMePage">Hire Me</a></li>
         </ul>
       </div>
 
