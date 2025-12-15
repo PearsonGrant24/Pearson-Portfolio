@@ -30,7 +30,7 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="nav-links desktop">
-          <li><a href="H/ome" className="active">Home</a></li>
+          <li><a href="/Home" className="active">Home</a></li>
           <li><a href="/About">About</a></li>
           <li><a href="/ProjectsPage">Projects</a></li>
           <li><a href="/ContactPage">Contact</a></li>
@@ -46,12 +46,12 @@ export default function Navbar() {
         </button>
 
         <ul>
-          <li onClick={() => setOpen(false)}><a href="#home">Home</a></li>
-          <li onClick={() => setOpen(false)}><a href="#about">About</a></li>
-          <li onClick={() => setOpen(false)}><a href="#projects">Projects</a></li>
-          <li onClick={() => setOpen(false)}><a href="#contact">Contact</a></li>
-          <li onClick={() => setOpen(false)}><a href="/resume.pdf">Resume</a></li>
-          <li onClick={() => setOpen(false)}><a className="hire-btn" href="#hire">Hire Me</a></li>
+          <li onClick={() => setOpen(false)}><a href="/Home">Home</a></li>
+          <li onClick={() => setOpen(false)}><a href="/About">About</a></li>
+          <li onClick={() => setOpen(false)}><a href="/ProjectsPage">Projects</a></li>
+          <li onClick={() => setOpen(false)}><a href="/ContactPage">Contact</a></li>
+          <li onClick={() => setOpen(false)}><a href="/ResumePage">Resume</a></li>
+          <li onClick={() => setOpen(false)}><a className="hire-btn" href="/HireMePage">Hire Me</a></li>
         </ul>
       </div>
 

@@ -21,7 +21,7 @@ const ResumePage: React.FC = () => {
           </p>
 
           <a
-            href="/Pearson_Grant_Resume.pdf"
+            href="/Pearson-Grant-Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="resume-download"
