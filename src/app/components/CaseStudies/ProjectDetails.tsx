@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 //import "./ProjectDetails.scss";
 
 type Project = any;
-const API = "http://localhost:5000";
+//const API = "http://localhost:5000";
 
 export default function ProjectDetails() {
   const { id } = useParams<{ id: string }>();
@@ -12,7 +12,8 @@ export default function ProjectDetails() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API}/projects`)
+    //fetch(`${API}/projects`)
+    fetch("/projects.json")
       .then((r) => r.json())
       .then((list) => {
         const found = list.find((p: any) => p.id === id);

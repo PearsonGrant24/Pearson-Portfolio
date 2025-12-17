@@ -1,0 +1,97 @@
+[
+  {
+    "id": "1765484817955",
+    "title": "Simple App Deployment",
+    "shortDescription": "Integrated monitoring, logging, and post-deployment checks to simulate real-world production release scenarios.",
+    "category": "AWS",
+    "details": {
+      "implementation": "creating permission roles:\n2. creating EC2 instance, setting up code deploy agent\n\n3. connecting to ec2 instance\n\n4. fetch code from this github repository by clonning it “git clone https://github.com/PearsonGrant24/Aws_pipeline.git ”\n\n4. creating aws application, deployment group,\n\n5. setting up pipeline to automate deployment\n\n6. Opening up the public ip address\n\nSteps 1\nCreating permission roles:\n\ni. go on to aws console search bar, type “iam” and click “roles”\n\n",
+      "results": "vi. all done click “launch instance”\n\nyour instance has been successfully created",
+      "images": []
+    },
+    "technologies": [
+      "AWS",
+      "IAM roles",
+      "LINUX",
+      "EC2"
+    ],
+    "github": "https://medium.com/@pearsongrant23/simple-app-deployment-on-aws-0ca06b842363",
+    "demo": "Not yet",
+    "coverImage": "https://docs.aws.amazon.com/images/cdk/v2/guide/images/all-in-one.jpg",
+    "createdAt": 1765484817955,
+    "updatedAt": 1765484817955
+  },
+  {
+    "id": "1765484460813",
+    "title": "Terraform–Ansible Multi-Server Deployment (AWS)",
+    "shortDescription": "Provisioned multiple EC2 servers with Terraform and managed configuration using Ansible.",
+    "category": "Terraform",
+    "details": {
+      "implementation": "🚀 New DevOps Project Drop: Fully Automated AWS Infrastructure with Terraform, Ansible\n\nAfter some time focusing on learning and growth, I’m excited to share a new DevOps project I’ve been building — one that brings together Infrastructure as Code, automated configuration management, and best-practice deployment workflows. This project simulates a real production environment and includes:\n\n🔧 Infrastructure Automation (Terraform) • VPC, subnets, EC2 provisioning • Secure networking and reusable modules • Automated, repeatable environment creation\n\n🛠️ Configuration Management (Ansible) • Server bootstrapping • Automated package installation • App deployment using structured playbooks • Handling real-world issues like inventory parsing, SSH access, Python installation, etc.\n\n☁️ AWS Cloud Architecture • Compute • Networking • Security • Automation from scratch",
+      "results": "",
+      "images": [
+        "/uploads/1765484460809-ntqg2o.png"
+      ]
+    },
+    "technologies": [
+      "Terraform",
+      "Ansible",
+      "EC2",
+      "VPC"
+    ],
+    "github": "https://github.com/PearsonGrant24/Terraform-ansible-demo.git",
+    "demo": "Not yet",
+    "coverImage": "https://spaceliftio.wpcomstaging.com/wp-content/uploads/2023/10/291.terraform-and-ansible.png",
+    "createdAt": 1765484460813,
+    "updatedAt": 1765484460813
+  },
+  {
+    "id": "1765477363633",
+    "title": "Chatgpt clone deloyment on EKS",
+    "shortDescription": "End-to-end IaC with Terraform; CI/CD with Jenkins; SonarQube integration for code quality and monitoring the app using Prometheus and Grafana",
+    "category": "AWS",
+    "details": {
+      "implementation": "Prerequisites:\n\nAWS account\nbasics of Terraform, EKS, Jenkins\n\nopen your terminal and make a separate folder for chat gpt→mkdir gpt\n    1. cd gpt\n    2. clone github repo\n    3. git clone https://github.com/ecs1991/Chat-gpt-deployment.git\n\nStep1:\n\n1. Setup Terraform\nTo install terraform, copy and paste the below commands\nsudo su\nsnap install terraform --classic\nwhich terraform5. Give a name to your user and tick on provide user access to management console and then click on I want an IAM user option\n\n6. Choose a password for your user →click next\n7. Attach policies directly to your IAM user → click next\nnote →I will provide the administrator access for now but be careful while attaching policies to your workspace\n",
+      "results": "\t\t\tPIC modify iam role\nStep 2:\nStep 3: Setup Sonarqube and Jenkins\n1. Sonarqube →\ncopy the public ip of your machine\n    1. Go to your browser and type →<publicip>:9000\n\t\tPIC sonarqube",
+      "images": [
+        "/uploads/1765477361422-kqjbhb.png"
+      ]
+    },
+    "technologies": [
+      "Kubernetes",
+      "Git/Github",
+      "Jenkins",
+      "Terraform"
+    ],
+    "github": "https://github.com/PearsonGrant24/Pearson-Portfolio/blob/main/src/app/components/ProjectCard.tsx",
+    "demo": "Null",
+    "coverImage": "https://usercontent.one/wp/collabnix.com/wp-content/uploads/2023/03/Screenshot_2023-03-14-22-58-12-07_e5d3893ac03954c6bb675ef2555b879b.jpg?media=1736482966",
+    "createdAt": 1765477363633,
+    "updatedAt": 1765483931760
+  },
+  {
+    "id": "1765463346885",
+    "title": "Super Mario Deployment on EKS",
+    "shortDescription": "Automated cluster provisioning with Terraform; monitored via Prometheus & Grafana.",
+    "category": "Software",
+    "details": {
+      "implementation": "Wenpm run build\nBuilds the app for production to the build folder.\nIt correctly bundles React in production mode and optimizes the build for the best performance.\n\nThe build is minified and the filenames include the hashes.\nYour app is ready to be deployed!\n\nSee the section about deployment for more information.\n\nnpm run eject\nNote: this is a one-way operation. Once you eject, you can't go back!\n\nIf you aren't satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.\n\nInstead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.\n\nYou don't have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.",
+      "results": "🎯 Conclusion\nAnd that’s a wrap, folks! 🥳\n\nWe just walked through a complete automation pipeline where Terraform handled infrastructure provisioning, and Ansible took care of server configuration — all in a multi-environment setup.\nThis hands-on project gives you a solid understanding of how real-world DevOps workflows look when code, automation, and infrastructure come together.\n\nBy combining these two tools — Terraform and Ansible — you’ve essentially built a foundation for scalable, environment-aware deployments.\nWhether it’s deploying static sites, configuring app servers, or scaling microservices, the same workflow logic applies — automate, version-control, and manage everything as code.\n\nIf you followed along till here, you’ve not just learned two tools —\nyou’ve built the mindset of a DevOps engineer who thinks in systems and automates for efficiency ⚙️\n\nKeep exploring, keep experimenting — and as always, build, break, and learn 💪",
+      "images": [
+        "/uploads/1765463346863-9r79q6.jpg"
+      ]
+    },
+    "technologies": [
+      "AWS",
+      "EKS",
+      "Prometheus",
+      "Grafana",
+      "AWS CLI"
+    ],
+    "github": "https://github.com/PearsonGrant24/Pearson-Portfolio",
+    "demo": "Not Available",
+    "coverImage": "https://middleware.io/wp-content/uploads/2025/03/Prometheus-vs-Grafana-Which-Tool-Suits-Your-Monitoring-Needs.jpg",
+    "createdAt": 1765463346885,
+    "updatedAt": 1765484000086
+  }
+]
