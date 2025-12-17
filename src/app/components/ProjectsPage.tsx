@@ -27,16 +27,18 @@ export default function ProjectsPage(): JSX.Element {
 
 
   useEffect(() => {
-    setLoading(true);
-    fetch("http://localhost:5000/projects")
-      .then((r) => r.json())
-      .then((data) => setProjects(Array.isArray(data) ? data : []))
-      .catch((e) => {
-        console.error("Failed to fetch projects", e);
-        setProjects([]);
-      })
-      .finally(() => setLoading(false));
-  }, []);
+  setLoading(true);
+
+  fetch("/projects.json")
+    .then((res) => res.json())
+    .then((data) => setProjects(Array.isArray(data) ? data : []))
+    .catch((err) => {
+      console.error("Failed to load projects", err);
+      setProjects([]);
+    })
+    .finally(() => setLoading(false));
+}, []);
+
 
   // derive filters from technologies (unique)
 
