@@ -11,25 +11,17 @@ export default function ProjectDetails() {
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   //fetch(`${API}/projects`)
-  //   fetch("/projects.json")
-  //     .then((r) => r.json())
-  //     .then((list) => {
-  //       const found = list.find((p: any) => p.id === id);
-  //       setProject(found || null);
-  //     })
-  //     .catch((e) => console.error(e))
-  //     .finally(() => setLoading(false));
-  // }, [id]);
-
-  fetch("/projects.json")
-  .then((res) => res.json())
-  .then((data) => {
-    const project = data.find((p: any) => p.id === id);
-    setProject(project);
-  });
-
+  useEffect(() => {
+    //fetch(`${API}/projects`)
+    fetch("/projects.json")
+      .then((r) => r.json())
+      .then((list) => {
+        const found = list.find((p: any) => p.id === id);
+        setProject(found || null);
+      })
+      .catch((e) => console.error(e))
+      .finally(() => setLoading(false));
+  }, [id]);
 
   if (loading) return <div className="cs-container"><p>Loading…</p></div>;
   if (!project) return <div className="cs-container"><p>Project not found</p></div>;
