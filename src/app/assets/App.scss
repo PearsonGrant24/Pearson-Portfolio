@@ -2177,3 +2177,137 @@ $transition: 0.22s ease;
     color: #c9ccff;
   }
 }
+ 
+
+
+//------------------------project details -----------
+.cs-page {
+  background: #0b0f1a;
+  color: #e5e7eb;
+  padding-bottom: 6rem;
+}
+
+/* HERO */
+.cs-hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .cs-subtitle {
+    font-size: 1.1rem;
+    color: #9ca3af;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .cs-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+
+    span {
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+/* COVER IMAGE */
+.cs-cover {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+
+  img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* CONTENT */
+.cs-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* SECTIONS */
+.cs-section {
+  margin-bottom: 3.5rem;
+
+  h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color: #f9fafb;
+  }
+
+  p {
+    color: #d1d5db;
+    white-space: pre-line;
+  }
+}
+
+/* IMAGE GRID */
+.cs-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+    background: #020617;
+  }
+}
+
+/* LINKS */
+.cs-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  a {
+    padding: 0.75rem 1.3rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  a:first-child {
+    background: #6366f1;
+    color: white;
+  }
+
+  a:last-child {
+    border: 1px solid #6366f1;
+    color: #6366f1;
+  }
+
+  a:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* LOADING */
+.cs-loading {
+  padding: 6rem;
+  text-align: center;
+  color: #9ca3af;
+}

@@ -48,14 +48,14 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.6 }}
         >
-          <img src="/logos/aws.svg" alt="AWS" />
-          <img src="/logos/docker.svg" alt="Docker" />
-          <img src="/logos/kubernetes.svg" alt="Kubernetes" />
-          <img src="/logos/terraform.svg" alt="Terraform" />
-          <img src="/logos/jenkins.svg" alt="Jenkins" />
-          <img src="/logos/azure.svg" alt="Azure" />
-          <img src="/logos/github.svg" alt="GitHub" />
-          <img src="/logos/linux.svg" alt="Linux" />
+          <img src="/assets/elements/logos/aws.png" alt="AWS" />
+          <img src="/assets/elements/logos/docker.png" alt="Docker" />
+          <img src="/assets/elements/logos/kubernetes.png" alt="Kubernetes" />
+          <img src="/assets/elements/logos/terraform.png" alt="Terraform" />
+          <img src="/assets/elements/logos/jenkins.svg" alt="Jenkins" />
+          <img src="/assets/elements/logos/azure.png" alt="Azure" />
+          <img src="/assets/elements/logos/github.svg" alt="GitHub" />
+          <img src="/assets/elements/logos/linux.jpeg" alt="Linux" />
         </motion.div>
       </div>
 
