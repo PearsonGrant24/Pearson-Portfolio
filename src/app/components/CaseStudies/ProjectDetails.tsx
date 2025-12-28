@@ -22,7 +22,7 @@ export default function CaseStudyPage() {
   const [project, setProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/projects")
+    fetch("/projects.json")
       .then((res) => res.json())
       .then((data: Project[]) => {
         const found = data.find((p) => p.id === id);
@@ -90,7 +90,7 @@ export default function CaseStudyPage() {
           )}
           {project.demo && project.demo !== "Not Available" && (
             <a href={project.demo} target="_blank" rel="noreferrer">
-              Live Demo
+              Download pdf
             </a>
           )}
         </div>
