@@ -1,100 +1,153 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import "../styles/CaseStudyPage.scss";
+//import "./CaseStudyPage.scss";
 
 type Project = {
   id: string;
   title: string;
   shortDescription?: string;
+  technologies?: string[];
   details?: {
     implementation?: string;
     results?: string;
     images?: string[];
   };
-  technologies?: string[];
   github?: string;
-  demo?: string;
+  mediumUrl?: string;
+  pdfUrl?: string;
   coverImage?: string;
 };
 
-export default function CaseStudyPage() {
+export default function CaseStudyPage(): JSX.Element {
   const { id } = useParams<{ id: string }>();
   const [project, setProject] = useState<Project | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/projects.json")
-      .then((res) => res.json())
-      .then((data: Project[]) => {
-        const found = data.find((p) => p.id === id);
-        setProject(found || null);
-      });
-  }, [id]);
+  fetch("/projects.json")
+    .then((res) => res.json())
+    .then((projects) => {
+      const found = projects.find((p: any) => p.id === id);
+      setProject(found || null);
+    })
+    .catch((err) => console.error("Failed to load project", err))
+    .finally(() => setLoading(false));
+}, [id]);
 
-  if (!project) {
-    return <div className="cs-loading">Loading case study…</div>;
-  }
+  if (loading) return <div className="cs-loading">Loading case study…</div>;
+  if (!project) return <div className="cs-error">Project not found.</div>;
+
+  const heroImage =
+    project.details?.images?.[0] || "/placeholder-project.png";
 
   return (
-    <article className="cs-page">
-      {/* HERO */}
-      <header className="cs-hero">
-        <h1>{project.title}</h1>
-        <p className="cs-subtitle">{project.shortDescription}</p>
+    <div className="cs-wrapper">
+      <div className="cs-container">
+        {/* TITLE */}
+        <h1 className="cs-title">{project.title}</h1>
 
-        <div className="cs-meta">
-          {project.technologies?.map((t) => (
-            <span key={t}>{t}</span>
+        {/* DESCRIPTION */}
+        {project.shortDescription && (
+          <p className="cs-description">{project.shortDescription}</p>
+        )}
+
+        {/* TECHNOLOGIES */}
+        <div className="cs-tech-stack">
+          {(project.technologies || []).map((tech) => (
+            <span key={tech} className="cs-pill">
+              {tech}
+            </span>
           ))}
         </div>
-      </header>
 
-      {/* COVER IMAGE */}
-      {project.coverImage && (
+        {/* IMAGE */}
+        {/* <div className="cs-image-wrapper">
+          <img src={heroImage} alt={project.title} />
+        </div>
+         */}
+         {project.coverImage && (
         <div className="cs-cover">
           <img src={project.coverImage} alt={project.title} />
         </div>
       )}
 
-      {/* CONTENT */}
-      <section className="cs-content">
-        {/* IMPLEMENTATION */}
-        <div className="cs-section">
+        {/* CONTENT */}
+        <section className="cs-section">
           <h2>Implementation</h2>
           <p>{project.details?.implementation}</p>
-        </div>
+        </section>
 
-        {/* RESULTS */}
-        <div className="cs-section">
-          <h2>Results</h2>
+        <section className="cs-section">
+          <h2>Results & Impact</h2>
           <p>{project.details?.results}</p>
+        </section>
+
+        {/* ACTIONS */}
+        <div className="cs-actions">
+          {project.mediumUrl ? (
+            <a
+              href={project.mediumUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="cs-btn cs-btn-outline"
+            >
+              Read on Medium
+            </a>
+          ) : (
+            <span className="cs-btn cs-btn-disabled">Medium Article Coming Soon</span>
+          )}
+
+          {project.pdfUrl ? (
+            <a
+              href={project.pdfUrl}
+              download
+              className="cs-btn cs-btn-primary"
+            >
+              Download PDF
+            </a>
+          ) : (
+            <span className="cs-btn cs-btn-disabled">PDF Not Available</span>
+          )}
         </div>
 
-        {/* GALLERY */}
-        {project.details?.images && (
-          <div className="cs-section">
-            <h2>Architecture & Screenshots</h2>
-            <div className="cs-gallery">
-              {project.details.images.map((img, i) => (
-                <img key={i} src={img} alt={`Screenshot ${i + 1}`} />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* LINKS */}
-        <div className="cs-links">
-          {project.github && (
-            <a href={project.github} target="_blank" rel="noreferrer">
-              View Source Code
-            </a>
-          )}
-          {project.demo && project.demo !== "Not Available" && (
-            <a href={project.demo} target="_blank" rel="noreferrer">
-              Download pdf
-            </a>
-          )}
-        </div>
-      </section>
-    </article>
+      </div>
+    </div>
   );
 }
+
+
+// import { useEffect, useState } from "react";
+// import { useParams, Link } from "react-router-dom";
+// import ReactMarkdown from "react-markdown";
+// import remarkGfm from "remark-gfm";
+// import rehypeHighlight from "rehype-highlight";
+// import "highlight.js/styles/github-dark.css";
+// // import "./CaseStudyPage.scss";
+
+// export default function CaseStudyPage() {
+//   const { id } = useParams();
+//   const [content, setContent] = useState("");
+
+//   useEffect(() => {
+//     fetch(`/content/case-studies/chatggpt-eks.md`)
+//       .then((res) => res.text())
+//       .then(setContent);
+//   }, [id]);
+
+//   return (
+//     <article className="cs-md-page">
+//       <div className="cs-md-inner">
+//         <ReactMarkdown
+//           remarkPlugins={[remarkGfm]}
+//           rehypePlugins={[rehypeHighlight]}
+//         >
+//           {content}
+//         </ReactMarkdown>
+
+//         <div className="cs-md-footer">
+//           <Link to="/Projects">← Back to Projects</Link>
+//         </div>
+//       </div>
+//     </article>
+//   );
+// }
