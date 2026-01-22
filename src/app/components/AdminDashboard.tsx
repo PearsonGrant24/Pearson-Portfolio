@@ -1,5 +1,5 @@
 // src/components/AdminDashboard.tsx
-import React, { useEffect, useState } from "react";
+import React, { JSX, useEffect, useState } from "react";
 //import "./AdminDashboard.scss";
 
 type Project = {

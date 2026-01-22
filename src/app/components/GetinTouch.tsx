@@ -86,7 +86,7 @@ export default function GetinTouch() {
               {/* Message */}
               <div className="mb-3">
                 <textarea
-                  rows="4"
+                  //rows="4"
                   className="form-control"
                   placeholder="Enter your message"
                 ></textarea>
@@ -125,13 +125,13 @@ export default function GetinTouch() {
           We’d love to hear from you. Reach out to us through the following channels:
         </p>
         <ul className="list-unstyled mt-3">
-          <li className="mb-2">
-            📞 <strong>+263 772433227</strong>
+          {/* <li className="mb-2">
+            📞 <strong>+263 771240325</strong>
           </li>
           <li className="mb-2">
             📧{" "}
             <a href="mailto:info@willez.co.zw" className="text-decoration-none" style={{ color: "#0aeec8" }}>
-              info@willez.co.zw
+              pearsongrant23@gmail.com
             </a>
           </li>
           <li>
@@ -139,7 +139,7 @@ export default function GetinTouch() {
             <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-decoration-none" style={{ color: "#0aeec8" }}>
               Connect on Facebook
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
