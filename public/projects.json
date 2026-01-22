@@ -1,69 +1,5 @@
 [
   {
-    "id": "1768938284709",
-    "title": "The Kanhava Project",
-    "shortDescription": "A small ecommerce website for selling bags",
-    "category": "Software",
-    "details": {
-      "implementation": "",
-      "results": "",
-      "images": []
-    },
-    "technologies": [
-      "React",
-      "Nodejs",
-      "Python"
-    ],
-    "github": "",
-    "demo": "",
-    "coverImage": "",
-    "createdAt": 1768938284709,
-    "updatedAt": 1768938284709
-  },
-  {
-    "id": "1768938207847",
-    "title": "Medical Dental Market",
-    "shortDescription": "Mobile Application that helps selling Dental products to customers and saves data to firebase",
-    "details": {
-      "implementation": "Designed and developed a Mobile application that enables users (customers to buy Dental products on the app) and Allows the owner to Upload new Dental products available",
-      "results": "",
-      "images": []
-    },
-    "technologies": [
-      "C#",
-      ".NET",
-      "Xamarin forms",
-      "Firebase"
-    ],
-    "github": "",
-    "demo": "",
-    "coverImage": "",
-    "createdAt": 1768938207847,
-    "updatedAt": 1768938207847
-  },
-  {
-    "id": "1768937968393",
-    "title": "Focus ElectricalHardware Website",
-    "shortDescription": "A Website for an Electrical Hardware that enable users to buy online",
-    "category": "Software",
-    "details": {
-      "implementation": "Focus Electrical Hardware is an online Python Ecommerce webapp built with Django, bootstrap, and SQLite. its a simple lightweight app easy to deploy anywhere anytime. A Website for an Electrical Hardware that enable users to buy online",
-      "results": "",
-      "images": []
-    },
-    "technologies": [
-      "Python",
-      "Firebase",
-      "SQLite",
-      "bootstrap"
-    ],
-    "github": "",
-    "demo": "",
-    "coverImage": "",
-    "createdAt": 1768937968393,
-    "updatedAt": 1768937968393
-  },
-  {
     "id": "1765484817955",
     "title": "Simple App Deployment",
     "shortDescription": "Integrated monitoring, logging, and post-deployment checks to simulate real-world production release scenarios.",
@@ -161,5 +97,69 @@
     "coverImage": "https://middleware.io/wp-content/uploads/2025/03/Prometheus-vs-Grafana-Which-Tool-Suits-Your-Monitoring-Needs.jpg",
     "createdAt": 1765463346885,
     "updatedAt": 1765484000086
+  }, 
+    {
+    "id": "1768938284709",
+    "title": "The Kanhava Project",
+    "shortDescription": "A small ecommerce website for selling bags",
+    "category": "Software",
+    "details": {
+      "implementation": "",
+      "results": "",
+      "images": []
+    },
+    "technologies": [
+      "React",
+      "Nodejs",
+      "Python"
+    ],
+    "github": "",
+    "demo": "",
+    "coverImage": "/assets/elements/img/BagsOne.png",
+    "createdAt": 1768938284709,
+    "updatedAt": 1768938284709
+  },
+  {
+    "id": "1768938207847",
+    "title": "Medical Dental Market",
+    "shortDescription": "Mobile Application that helps selling Dental products to customers and saves data to firebase",
+    "details": {
+      "implementation": "Designed and developed a Mobile application that enables users (customers to buy Dental products on the app) and Allows the owner to Upload new Dental products available",
+      "results": "",
+      "images": []
+    },
+    "technologies": [
+      "C#",
+      ".NET",
+      "Xamarin forms",
+      "Firebase"
+    ],
+    "github": "",
+    "demo": "",
+    "coverImage": "",
+    "createdAt": 1768938207847,
+    "updatedAt": 1768938207847
+  },
+  {
+    "id": "1768937968393",
+    "title": "Focus ElectricalHardware Website",
+    "shortDescription": "A Website for an Electrical Hardware that enable users to buy online",
+    "category": "Software",
+    "details": {
+      "implementation": "Focus Electrical Hardware is an online Python Ecommerce webapp built with Django, bootstrap, and SQLite. its a simple lightweight app easy to deploy anywhere anytime. A Website for an Electrical Hardware that enable users to buy online",
+      "results": "",
+      "images": []
+    },
+    "technologies": [
+      "Python",
+      "Firebase",
+      "SQLite",
+      "bootstrap"
+    ],
+    "github": "",
+    "demo": "",
+    "coverImage": "/assets/elements/img/FocusHardware.png",
+    "createdAt": 1768937968393,
+    "updatedAt": 1768937968393
   }
 ]
