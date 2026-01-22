@@ -1,0 +1,164 @@
+[
+  {
+    "id": "1768938284709",
+    "title": "The Kanhava Project",
+    "shortDescription": "A small ecommerce website for selling bags",
+    "category": "Software",
+    "details": {
+      "implementation": "",
+      "results": "",
+      "images": []
+    },
+    "technologies": [
+      "React",
+      "Nodejs",
+      "Python"
+    ],
+    "github": "",
+    "demo": "",
+    "coverImage": "",
+    "createdAt": 1768938284709,
+    "updatedAt": 1768938284709
+  },
+  {
+    "id": "1768938207847",
+    "title": "Medical Dental Market",
+    "shortDescription": "Mobile Application that helps selling Dental products to customers and saves data to firebase",
+    "details": {
+      "implementation": "Designed and developed a Mobile application that enables users (customers to buy Dental products on the app) and Allows the owner to Upload new Dental products available",
+      "results": "",
+      "images": []
+    },
+    "technologies": [
+      "C#",
+      ".NET",
+      "Xamarin forms",
+      "Firebase"
+    ],
+    "github": "",
+    "demo": "",
+    "coverImage": "",
+    "createdAt": 1768938207847,
+    "updatedAt": 1768938207847
+  },
+  {
+    "id": "1768937968393",
+    "title": "Focus ElectricalHardware Website",
+    "shortDescription": "A Website for an Electrical Hardware that enable users to buy online",
+    "category": "Software",
+    "details": {
+      "implementation": "Focus Electrical Hardware is an online Python Ecommerce webapp built with Django, bootstrap, and SQLite. its a simple lightweight app easy to deploy anywhere anytime. A Website for an Electrical Hardware that enable users to buy online",
+      "results": "",
+      "images": []
+    },
+    "technologies": [
+      "Python",
+      "Firebase",
+      "SQLite",
+      "bootstrap"
+    ],
+    "github": "",
+    "demo": "",
+    "coverImage": "",
+    "createdAt": 1768937968393,
+    "updatedAt": 1768937968393
+  },
+  {
+    "id": "1765484817955",
+    "title": "Simple App Deployment",
+    "shortDescription": "Integrated monitoring, logging, and post-deployment checks to simulate real-world production release scenarios.",
+    "category": "AWS",
+    "details": {
+      "implementation": "creating permission roles:\n2. creating EC2 instance, setting up code deploy agent\n\n3. connecting to ec2 instance\n\n4. fetch code from this github repository by clonning it “git clone https://github.com/PearsonGrant24/Aws_pipeline.git ”\n\n4. creating aws application, deployment group,\n\n5. setting up pipeline to automate deployment\n\n6. Opening up the public ip address\n\nSteps 1\nCreating permission roles:\n\ni. go on to aws console search bar, type “iam” and click “roles”\n\n",
+      "results": "vi. all done click “launch instance”\n\nyour instance has been successfully created",
+      "images": []
+    },
+    "technologies": [
+      "AWS",
+      "IAM roles",
+      "LINUX",
+      "EC2"
+    ],
+    "github": "https://medium.com/@pearsongrant23/simple-app-deployment-on-aws-0ca06b842363",
+    "demo": "Not yet",
+    "coverImage": "https://docs.aws.amazon.com/images/cdk/v2/guide/images/all-in-one.jpg",
+    "createdAt": 1765484817955,
+    "updatedAt": 1765484817955
+  },
+  {
+    "id": "1765484460813",
+    "title": "Terraform–Ansible Multi-Server Deployment (AWS)",
+    "shortDescription": "Provisioned multiple EC2 servers with Terraform and managed configuration using Ansible.",
+    "category": "Terraform",
+    "details": {
+      "implementation": "🚀 New DevOps Project Drop: Fully Automated AWS Infrastructure with Terraform, Ansible\n\nAfter some time focusing on learning and growth, I’m excited to share a new DevOps project I’ve been building — one that brings together Infrastructure as Code, automated configuration management, and best-practice deployment workflows. This project simulates a real production environment and includes:\n\n🔧 Infrastructure Automation (Terraform) • VPC, subnets, EC2 provisioning • Secure networking and reusable modules • Automated, repeatable environment creation\n\n🛠️ Configuration Management (Ansible) • Server bootstrapping • Automated package installation • App deployment using structured playbooks • Handling real-world issues like inventory parsing, SSH access, Python installation, etc.\n\n☁️ AWS Cloud Architecture • Compute • Networking • Security • Automation from scratch",
+      "results": "",
+      "images": [
+        "/uploads/1765484460809-ntqg2o.png"
+      ]
+    },
+    "technologies": [
+      "Terraform",
+      "Ansible",
+      "EC2",
+      "VPC"
+    ],
+    "github": "https://github.com/PearsonGrant24/Terraform-ansible-demo.git",
+    "demo": "Not yet",
+    "coverImage": "https://spaceliftio.wpcomstaging.com/wp-content/uploads/2023/10/291.terraform-and-ansible.png",
+    "createdAt": 1765484460813,
+    "updatedAt": 1765484460813
+  },
+  {
+    "id": "1765477363633",
+    "title": "Chatgpt clone deloyment on AWS EKS!",
+    "shortDescription": "End-to-end IaC with Terraform; CI/CD with Jenkins; SonarQube integration for code quality and monitoring the app using Prometheus and Grafana",
+    "category": "AWS",
+    "details": {
+      "implementation": "Deploying a ChatGPT Clone on AWS EKS Using Terraform, Jenkins, and Prometheus/Grafana\n\n\nIntroduction\nIn this project, I designed and implemented an end-to-end DevOps solution to deploy a ChatGPT-like application on AWS EKS. The implementation covers infrastructure provisioning with Terraform, CI/CD automation using Jenkins, containerization with Docker, Kubernetes-based deployment, security and quality enforcement, and full observability using Prometheus and Grafana.\nThis article documents a complete, step-by-step DevOps implementation, focusing not only on what was deployed, but on how and why each decision was made. The structure reflects real-world DevOps problem-solving workflows and is intended for technical readers, hiring managers, and recruiters evaluating practical cloud and DevOps experience.\n\nProject Objectives\n    • Provision cloud infrastructure using Infrastructure as Code (Terraform)\n    • Implement a secure CI/CD pipeline with Jenkins\n    • Deploy the application on Kubernetes (EKS)\n    • Apply code quality and security scanning practices\n    • Implement monitoring and observability using Prometheus and Grafana\n    • Ensure proper resource cleanup to control cloud costs\n\nTechnology Stack\n    • Cloud Provider: AWS\n    • IaC: Terraform\n    • CI/CD: Jenkins\n    • Containerization: Docker\n    • Orchestration: Kubernetes (Amazon EKS)\n    • Code Quality: SonarQube\n    • Security: OWASP Dependency Check, Trivy\n    • Monitoring: Prometheus, Node Exporter, Grafana\n    • Application: Node.js-based ChatGPT UI\n\nPrerequisites\n    • Active AWS account\n    • Basic knowledge of Terraform, Jenkins, Docker, and Kubernetes\n    • AWS CLI installed locally\n\nStep 1: Project Initialization\nTo keep the workspace organized, a dedicated project directory was created locally.\nmkdir gpt\ncd gpt\nhttps://github.com/PearsonGrant24/Chat-gpt-clone-deployment.git\nThis repository contains:\n    • Terraform configurations\n    • Jenkins pipelines\n    • Dockerfile\n    • Kubernetes manifests\n\nStep 2: Terraform Installation and AWS Configuration\nInstalling Terraform\nTerraform was installed using Snap:\nsudo snap install terraform --classic\nterraform --version\nConfiguring AWS Credentials\nAn IAM user was created with programmatic access. For simplicity in this demo, AdministratorAccess was attached (not recommended for production).\nAWS CLI configuration:\naws configure\nThis step enables Terraform and Jenkins to authenticate securely with AWS.\n\nStep 3: Infrastructure Provisioning with Terraform\nTerraform was used to provision:\n    • An EC2 instance (Jenkins + SonarQube host)\n    • Security groups\n    • IAM roles\nThe EC2 instance uses user-data to automatically install:\n    • Jenkins\n    • Docker\n    • Trivy\n    • SonarQube (running as a container on port 9000)\nTerraform execution:\nterraform init\nterraform validate\nterraform plan\nterraform apply --auto-approve\nAt this stage, the foundational DevOps tooling is available without any manual server configuration.\n\nStep 4: Jenkins and SonarQube Configuration\nJenkins Setup\n    • Accessed via http://<public-ip>:8080\n    • Initial admin password retrieved from EC2\n    • Jenkins user and plugins configured\nSonarQube Setup\n    • Accessed via http://<public-ip>:9000\n    • Initial admin credentials updated\n    • Project and token created for Jenkins integration\nThis establishes automated code quality analysis early in the pipeline.\n\nStep 5: CI/CD Pipeline Design (Problem-Solving Focus)\nThe CI/CD pipeline was designed to address common production concerns:\nProblem\nSolution Implemented\nPoor code quality\nSonarQube analysis & quality gates\nVulnerable dependencies\nOWASP Dependency Check\nInsecure container images\nTrivy filesystem & image scans\nManual deployments\nFully automated Jenkins pipeline\nPipeline Stages\n    1. Source code checkout\n    2. Dependency installation\n    3. Static code analysis (SonarQube)\n    4. Quality gate enforcement\n    5. Dependency vulnerability scanning\n    6. Docker image build and push\n    7. Container image security scan\nThis pipeline enforces shift-left security and quality principles.\n\nStep 6: Application Deployment and Validation\nThe application container was deployed and validated locally to ensure correctness before Kubernetes deployment.\ndocker run -d -p 3000:3000 chatbot:latest\nThe OpenAI API key was configured through the UI, completing the functional validation.\n\nStep 7: EKS Cluster Provisioning via Jenkins\nA second Jenkins pipeline was created specifically for EKS lifecycle management using Terraform.\nPipeline capabilities:\n    • Create or destroy EKS clusters\n    • Parameterized execution for safety\nThis approach reflects real enterprise environments where cluster provisioning is automated and auditable.\n\nStep 8: Kubernetes Deployment\nAfter the EKS cluster was created:\naws eks update-kubeconfig --name <cluster-name> --region <region>\nThe Kubernetes manifests were applied:\nkubectl apply -f chatbot-ui.yaml\nkubectl get all\nThe application was exposed via a LoadBalancer service, enabling public access.\n\nStep 9: Monitoring with Prometheus and Grafana\nPrometheus\nA dedicated EC2 instance was provisioned for monitoring to ensure isolation.\nPrometheus was configured to scrape metrics from:\n    • Node Exporter\n    • Jenkins\nGrafana\nGrafana was installed and connected to Prometheus.\nImported dashboards:\n    • Node Exporter dashboard (ID: 1860)\n    • Jenkins monitoring dashboard (ID: 9964)\nThis setup provides real-time visibility into infrastructure health and CI/CD performance.\n\nStep 10: Infrastructure Cleanup\nTo avoid unnecessary AWS costs, all resources were destroyed once testing was complete.\nCleanup steps:\n    • Kubernetes resources deleted\n    • EKS cluster destroyed via Jenkins\n    • Terraform destroy executed\n    • IAM users and roles removed\nThis reinforces cost-aware DevOps practices.\n\nKey Takeaways\n    • Demonstrates full DevOps lifecycle ownership\n    • Applies industry-standard security and monitoring tools\n    • Reflects production-grade workflows, not a demo-only setup\n\n\n\n",
+      "results": "This project showcases a realistic DevOps implementation combining Terraform, Jenkins, Kubernetes, and observability tooling. It highlights not just deployment success, but disciplined engineering practices around automation, security, monitoring, and cost control—core expectations for modern DevOps engineers.",
+      "images": [
+        "/uploads/1765477361422-kqjbhb.png"
+      ]
+    },
+    "technologies": [
+      "Kubernetes",
+      "Jenkins",
+      "Terraform",
+      "Prometheus",
+      "Grafana",
+      "Sonarqube",
+      "Git/Github"
+    ],
+    "github": "https://github.com/PearsonGrant24/Pearson-Portfolio/blob/main/src/app/components/ProjectCard.tsx",
+    "demo": "Null",
+    "coverImage": "https://usercontent.one/wp/collabnix.com/wp-content/uploads/2023/03/Screenshot_2023-03-14-22-58-12-07_e5d3893ac03954c6bb675ef2555b879b.jpg?media=1736482966",
+    "createdAt": 1765477363633,
+    "updatedAt": 1766319291897
+  },
+  {
+    "id": "1765463346885",
+    "title": "Super Mario Deployment on EKS",
+    "shortDescription": "Automated cluster provisioning with Terraform; monitored via Prometheus & Grafana.",
+    "category": "AWS",
+    "details": {
+      "implementation": "Wenpm run build\nBuilds the app for production to the build folder.\nIt correctly bundles React in production mode and optimizes the build for the best performance.\n\nThe build is minified and the filenames include the hashes.\nYour app is ready to be deployed!\n\nSee the section about deployment for more information.\n\nnpm run eject\nNote: this is a one-way operation. Once you eject, you can't go back!\n\nIf you aren't satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.\n\nInstead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.\n\nYou don't have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.",
+      "results": "🎯 Conclusion\nAnd that’s a wrap, folks! 🥳\n\nWe just walked through a complete automation pipeline where Terraform handled infrastructure provisioning, and Ansible took care of server configuration — all in a multi-environment setup.\nThis hands-on project gives you a solid understanding of how real-world DevOps workflows look when code, automation, and infrastructure come together.\n\nBy combining these two tools — Terraform and Ansible — you’ve essentially built a foundation for scalable, environment-aware deployments.\nWhether it’s deploying static sites, configuring app servers, or scaling microservices, the same workflow logic applies — automate, version-control, and manage everything as code.\n\nIf you followed along till here, you’ve not just learned two tools —\nyou’ve built the mindset of a DevOps engineer who thinks in systems and automates for efficiency ⚙️\n\nKeep exploring, keep experimenting — and as always, build, break, and learn 💪",
+      "images": [
+        "/uploads/1765463346863-9r79q6.jpg"
+      ]
+    },
+    "technologies": [
+      "AWS",
+      "EKS",
+      "Prometheus",
+      "Grafana",
+      "AWS CLI"
+    ],
+    "github": "https://github.com/PearsonGrant24/Pearson-Portfolio",
+    "demo": "Not Available",
+    "coverImage": "https://middleware.io/wp-content/uploads/2025/03/Prometheus-vs-Grafana-Which-Tool-Suits-Your-Monitoring-Needs.jpg",
+    "createdAt": 1765463346885,
+    "updatedAt": 1765484000086
+  }
+]
