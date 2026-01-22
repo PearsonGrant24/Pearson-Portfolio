@@ -19,12 +19,12 @@ const RoutePath = () => {
         <Route path="/" element={<Home />} />
 		<Route path="/Home" element={<Home />} />
 		<Route path="/About" element={<About />} />
-		<Route path="/ProjectsPage" element={<ProjectsPage />} />
+		{/* <Route path="/ProjectsPage" element={<ProjectsPage />} />
 		<Route path="/CaseStudies/:id" element={<ProjectDetails />} />
 		<Route path="/HireMePage" element={<HireMePage/>} />
-		{/* <Route path="/ContactPage" element={<ContactPage/>} /> */}
+		<Route path="/ContactPage" element={<ContactPage/>} />
 		<Route path="/ResumePage" element={<ResumePage/>} />
-		<Route path="/AdminDashboard" element={<AdminDashboard/>} />
+		<Route path="/AdminDashboard" element={<AdminDashboard/>} /> */}
 
         </Routes>
 	
