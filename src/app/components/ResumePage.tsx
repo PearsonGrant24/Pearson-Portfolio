@@ -1,5 +1,4 @@
 import React from "react";
-//import "./ResumePage.scss";
 import { motion } from "framer-motion";
 
 const ResumePage: React.FC = () => {
@@ -7,7 +6,7 @@ const ResumePage: React.FC = () => {
     <section className="resume-page">
       <div className="resume-container">
 
-        // Header 
+        {/* // Header  */}
         <motion.div
           className="resume-header"
           initial={{ opacity: 0, y: 30 }}
