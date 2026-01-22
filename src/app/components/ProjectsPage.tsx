@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { JSX, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 type Project = {
@@ -38,19 +38,10 @@ export default function ProjectsPage(): JSX.Element {
     .finally(() => setLoading(false));
 }, []);
 
-
   // derive filters from technologies (unique)
 
   const categories = useMemo(() => {
   const set = new Set<string> (projects.map((p) => p.category || "Software"));
-    
-    // const set = new Set<string>();
-
-    // projects.forEach((p) => {
-    //   if (Array.isArray(p.category)) {
-    //     p.category.forEach((c) => set.add(c));
-    //   }
-    // });
 
     return ["All", ...Array.from(set)];
   }, [projects]);
@@ -58,38 +49,11 @@ export default function ProjectsPage(): JSX.Element {
   // Filtering logic (corrected)
   const filtered = useMemo(() => {
     if (activeFilter === "All") return projects;
-
      return projects.filter((p) => 
    p.category === activeFilter);
-   // );
   }, [projects, activeFilter]);
 
-  // const [filter, setFilter] = useState<string>("All");
-
-  // const categories = useMemo(() => {
-  //   const set = new Set<string>
-  // (projects.map((p) => p.category || "Software"));
-  //   return ["All", ...Array.from(set)];
-  // }, []);
-
-  // const filtered = useMemo(() => {
-  //   if (filter === "All") return projects;
-  //   return projects.filter((p) => 
-  // p.category === filter);
-  // }, [filter]);
-
-
-  // const filters = useMemo(() => {
-  //   const set = new Set<string>();
-  //   projects.forEach((p) => p.category .forEach((t) => set.add(t)));
-  //   return ["All", ...Array.from(set)];
-  // }, [projects]);
-
-  // const filtered = useMemo(() => {
-  //   if (activeFilter === "All") return projects;
-  //   return projects.filter((p) => (p.category || []).includes(activeFilter));
-  // }, [projects, activeFilter]);
-
+  
   return (
     <div className="pg-projects-page">
       <div className="pg-hero">
@@ -124,7 +88,7 @@ export default function ProjectsPage(): JSX.Element {
         ) : (
           <div className="pg-grid">
             {filtered.map((p) => {
-              const image = p.coverImage ?? p.details?.images?.[0] ?? "/placeholder.png";
+              // const image = p.coverImage ?? p.details?.images?.[0] ?? "/placeholder.png";
               return (
                 <article className="pg-card" key={p.id}>
 
@@ -176,7 +140,3 @@ export default function ProjectsPage(): JSX.Element {
     </div>
   );
 }
-
-{/* <div className="pg-category-pill">
-                  {p.category ?? "General"}
-                </div> */}
