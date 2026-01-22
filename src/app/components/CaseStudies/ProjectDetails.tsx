@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { JSX, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import "./CaseStudyPage.scss";
 
 type Project = {
   id: string;
@@ -37,8 +36,8 @@ export default function CaseStudyPage(): JSX.Element {
   if (loading) return <div className="cs-loading">Loading case study…</div>;
   if (!project) return <div className="cs-error">Project not found.</div>;
 
-  const heroImage =
-    project.details?.images?.[0] || "/placeholder-project.png";
+  // const heroImage =
+  //   project.details?.images?.[0] || "/placeholder-project.png";
 
   return (
     <div className="cs-wrapper">
