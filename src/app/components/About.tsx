@@ -1,13 +1,5 @@
 import React from "react";
-// import "./About.scss";
 import { motion } from "framer-motion";
-import {
-  MapPin,
-  Mail,
-  Briefcase,
-  FolderKanban,
-} from "lucide-react";
-
 
 
 const About = () => {
