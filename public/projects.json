@@ -123,6 +123,7 @@
     "id": "1768938207847",
     "title": "Medical Dental Market",
     "shortDescription": "Mobile Application that helps selling Dental products to customers and saves data to firebase",
+    "category": "Software",
     "details": {
       "implementation": "Designed and developed a Mobile application that enables users (customers to buy Dental products on the app) and Allows the owner to Upload new Dental products available",
       "results": "",
