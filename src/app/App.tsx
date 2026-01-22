@@ -1,12 +1,11 @@
-// import React, {useEffect} from 'react';
+
 import RoutePath from './routes/RoutePath.tsx';
 import './assets/App.scss';
 import { BrowserRouter } from 'react-router-dom';
-// import Home from './components/Home.tsx';
 import Header from './components/header/Navbar.tsx';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
     
@@ -14,11 +13,8 @@ const App = () => {
     
       <BrowserRouter>
           <Header/>
-          {/* <Header/ */}
-          {/* <Route path = '/' element={() => <Home/>} /> */}
-          <RoutePath />
           
-          {/* <Footer/> */}
+          <RoutePath />         
         
           </BrowserRouter>
     
