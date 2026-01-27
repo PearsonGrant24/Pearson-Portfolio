@@ -1,6 +1,4 @@
-// src/components/AdminDashboard.tsx
 import React, { JSX, useEffect, useState } from "react";
-//import "./AdminDashboard.scss";
 
 type Project = {
   id: string;
