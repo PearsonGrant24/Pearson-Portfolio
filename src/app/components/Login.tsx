@@ -28,7 +28,7 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleSubmit}>Login</button>
+      <button onClick={handleSubmit}>Sign in</button>
     </div>
   );
 }
