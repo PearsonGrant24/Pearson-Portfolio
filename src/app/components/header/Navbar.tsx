@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router";
 // import "./Navbar.scss";
 
 export default function Navbar() {
@@ -30,13 +31,39 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="nav-links desktop">
-          <li><a href="/Home" className="active">Home</a></li>
-          <li><a href="/About">About</a></li>
-          <li><a href="/ProjectsPage">Projects</a></li>
-          <li><a href="/ContactPage">Contact</a></li>
-          <li><a href="/ResumePage">Resume</a></li>
-          <li><a className="hire-btn" href="/HireMePage">Hire Me</a></li>
+          <li>
+            <NavLink to="/Home" className={({ isActive }) => isActive ? "active" : ""}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/About" className={({ isActive }) => isActive ? "active" : ""}>
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/ProjectsPage" className={({ isActive }) => isActive ? "active" : ""}>
+              Projects
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/ContactPage" className={({ isActive }) => isActive ? "active" : ""}>
+              Contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/ResumePage" className={({ isActive }) => isActive ? "active" : ""}>
+              Resume
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/HireMePage" className="hire-btn">
+              Hire Me
+            </NavLink>
+          </li>
         </ul>
+
+
       </div>
 
       {/* CURTAIN MENU */}
@@ -53,6 +80,7 @@ export default function Navbar() {
           <li onClick={() => setOpen(false)}><a href="/ResumePage">Resume</a></li>
           <li onClick={() => setOpen(false)}><a className="hire-btn" href="/HireMePage">Hire Me</a></li>
         </ul>
+        
       </div>
 
       {/* CURTAIN SHADOW BACKDROP */}
