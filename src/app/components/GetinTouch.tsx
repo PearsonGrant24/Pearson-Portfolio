@@ -143,8 +143,6 @@ export default function GetinTouch() {
         </div>
       </div>
     </section>
-
-
     </>
   )
 }
