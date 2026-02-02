@@ -37,7 +37,7 @@ const Home = () => {
           transition={{ delay: 1.3 }}
         >
           <a href="/ProjectsPage" className="btn primary">View Projects</a>
-          <a href="/" className="btn secondary">Hire Me</a>
+          <a href="/ContactPage" className="btn secondary">Hire Me</a>
         </motion.div>
 
         {/* TECHNOLOGY LOGO STRIP */}
