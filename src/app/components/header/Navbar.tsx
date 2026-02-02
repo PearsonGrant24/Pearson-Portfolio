@@ -73,14 +73,28 @@ export default function Navbar() {
         </button>
 
         <ul>
-          <li onClick={() => setOpen(false)}><a href="/Home">Home</a></li>
-          <li onClick={() => setOpen(false)}><a href="/About">About</a></li>
-          <li onClick={() => setOpen(false)}><a href="/ProjectsPage">Projects</a></li>
-          <li onClick={() => setOpen(false)}><a href="/ContactPage">Contact</a></li>
-          <li onClick={() => setOpen(false)}><a href="/ResumePage">Resume</a></li>
-          <li onClick={() => setOpen(false)}><a className="hire-btn" href="/HireMePage">Hire Me</a></li>
+          <li onClick={() => setOpen(false)}>
+            <NavLink to="/Home">Home</NavLink>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <NavLink to="/About">About</NavLink>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <NavLink to="/ProjectsPage">Projects</NavLink>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <NavLink to="/ContactPage">Contact</NavLink>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <NavLink to="/ResumePage">Resume</NavLink>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <NavLink to="/HireMePage" className="hire-btn">
+              Hire Me
+            </NavLink>
+          </li>
         </ul>
-        
+
       </div>
 
       {/* CURTAIN SHADOW BACKDROP */}
