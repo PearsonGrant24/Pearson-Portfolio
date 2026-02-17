@@ -1,0 +1,99 @@
+//>>>>>>>>>>>>>>>>>>>>>Admin Dash>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/* AdminDashboard.scss — polished dark admin theme */
+.admin-wrap {
+  padding: 36px;
+  color: #eaf0ff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-header { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:18px; }
+.admin-header h1 { color: var(--accent-blue); margin:0; }
+
+.card.admin-form, .admin-form { /* re-use naming if needed */ }
+
+.admin-form.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 28px;
+}
+
+.form-row { margin-bottom: 12px; display:flex; flex-direction:column; gap:8px; }
+.form-row label { font-weight:700; color:#cfd8ff; font-size:0.95rem; }
+.form-row input, .form-row textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #eaf0ff;
+}
+
+/* previews */
+.previews { display:flex; gap:10px; margin-top:8px; flex-wrap:wrap; }
+.preview { width:110px; height:70px; border-radius:8px; overflow:hidden; background:#08102a; display:flex; align-items:center; justify-content:center; }
+.preview img { width:100%; height:100%; object-fit:cover; }
+
+/* buttons */
+.btn { padding:8px 12px; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.06); color:#eaf0ff; cursor:pointer; }
+.btn-primary { background: linear-gradient(90deg,var(--accent-purple),var(--accent-blue)); color:#fff; border:none; }
+.btn-danger { background:#ff6161; color:#fff; border:none; }
+.btn-outline { border:1px solid rgba(255,255,255,0.06); background:transparent; color:#dfe6ff; text-decoration:none; display:inline-flex; align-items:center; padding:8px 10px; border-radius:8px; }
+
+.section-title { margin:20px 0 12px; font-size:1.25rem; color:#dfe6ff; }
+
+/* projects grid */
+.projects-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height: 220px;
+}
+
+.card-media { height:140px; overflow:hidden; }
+.card-media img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.card-body { padding:12px; flex:1; display:flex; flex-direction:column; gap:8px; }
+.muted { color:#9fb0ff; font-size:0.93rem; }
+
+.pills { display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background: rgba(255,205,80,0.14); color:#f3e7c7; padding:6px 10px; border-radius:999px; font-weight:700; font-size:0.82rem; }
+
+.card-actions { margin-top:auto; display:flex; gap:8px; }
+
+
+//>>>>>>>>>>>>>>>>>>>>>>Case study page>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+/* ProjectDetails.scss */
+.cs-container { padding: 40px; max-width: 1100px; margin: 0 auto; color: #eaf0ff; }
+
+.cs-hero { display:flex; gap: 28px; align-items:center; margin-bottom: 26px;
+  .cs-hero-left { flex:1;
+    h1 { font-size:2.2rem; margin:0 0 8px; color:var(--text-primary); }
+    .subtitle { color:var(--muted); margin-bottom:12px; }
+    .meta-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+      .meta-pill { background: rgba(255,255,255,0.03); padding:8px 12px; border-radius:999px; color: #fbe9b1; font-weight:700; }
+      .cs-link { color: #cfe0ff; text-decoration:underline; }
+      .cs-cta { background: linear-gradient(90deg,var(--accent-purple),var(--accent-blue)); color:white; padding:8px 12px; border-radius:8px; text-decoration:none; }
+    }
+  }
+
+  .cs-hero-right { width:420px; img { width:100%; height:260px; object-fit:cover; border-radius:12px; border:1px solid rgba(255,255,255,0.04); } }
+}
+
+.cs-section { background: rgba(255,255,255,0.02); padding:18px; border-radius:10px; margin-bottom:14px; border:1px solid rgba(255,255,255,0.03); }
+
+.cs-gallery .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:12px; margin-top:12px; }
+.tile img { width:100%; height:160px; object-fit:cover; border-radius:10px; }
+ 
+
