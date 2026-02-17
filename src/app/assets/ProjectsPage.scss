@@ -1,0 +1,198 @@
+//>>>>>>>>>>>>>>>>>>>>projects.scss>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/* Projects page design — your theme */
+.projects-page {
+  padding-bottom: 60px;
+
+  .projects-hero {
+    padding: 64px 0 12px;
+    text-align: center;
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 8px;
+      color: #e9ecff;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: 16px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .18s ease;
+      box-shadow: none;
+
+      &.active {
+        background: linear-gradient(90deg, var(--gold), var(--gold-600));
+        color: #111;
+        box-shadow: 0 8px 22px rgba(216, 172, 0, 0.12);
+        border: 1px solid rgba(0,0,0,0.2);
+      }
+    }
+  }
+
+  .projects-grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+
+  /* card */
+  .pg-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: rgba(123,77,255,0.28);
+      box-shadow: 0 18px 40px rgba(59,76,255,0.12);
+    }
+  }
+
+  .pg-card-media {
+    position: relative;
+    height: 180px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.08));
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pg-badge {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      background: linear-gradient(90deg,#7b4dff,#7b4dff);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      box-shadow: 0 6px 16px rgba(123,77,255,0.12);
+    }
+  }
+
+  .pg-card-body {
+    padding: 18px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+
+    h3 {
+      font-size: 20px;
+      margin: 0;
+      color: var(--text-primary);
+    }
+
+    .pg-sub {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .pg-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .pg-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .pg-pill {
+      background: rgba(255,255,255,0.02);
+      color: #f5e9c7;
+      border: 1px solid rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      box-shadow: 0 6px 16px rgba(216,172,0,0.04);
+    }
+
+    .pg-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: all .18s;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid rgba(240,196,0,0.12);
+      padding: 10px 18px;
+      border-radius: 12px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg,var(--accent-purple), var(--accent-blue));
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 12px;
+      box-shadow: 0 10px 26px rgba(107,64,255,0.12);
+    }
+  }
+
+  /* responsive */
+  @media (max-width: 1100px) {
+    .projects-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width: 680px) {
+    .projects-grid { grid-template-columns: 1fr; }
+    .pg-card { min-height: auto; }
+    .pg-card-media { height: 220px; }
+  }
+}
