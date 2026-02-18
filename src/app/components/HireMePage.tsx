@@ -33,16 +33,16 @@ export default function HireMePage(): JSX.Element {
             transition={{ delay: 0.4 }}
           >
             <a href="#contact" className="btn-primary">Start a Conversation</a>
-            <a href="/resume" className="btn-secondary">View Resume</a>
+            {/* <a href="/resume" className="btn-secondary">View Resume</a> */}
             <a
             href="/Pearson-Grant-Resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="resume-download"
+            className="btn-secondary"
           >
             Download PDF
           </a>
-          
+
           </motion.div>
         </div>
       </section>
