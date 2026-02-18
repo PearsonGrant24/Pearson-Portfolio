@@ -156,7 +156,7 @@ export default function HireMePage(): JSX.Element {
             build faster, safer, and more reliable systems.
           </p>
 
-          <a href="#contact" className="btn-primary large">
+          <a href="/ProjectsPage" className="btn-primary large">
             Contact Me
           </a>
         </div>
