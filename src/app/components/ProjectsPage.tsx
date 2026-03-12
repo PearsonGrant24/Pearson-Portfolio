@@ -88,7 +88,6 @@ export default function ProjectsPage(): JSX.Element {
         ) : (
           <div className="pg-grid">
             {filtered.map((p) => {
-              // const image = p.coverImage ?? p.details?.images?.[0] ?? "/placeholder.png";
               return (
                 <article className="pg-card" key={p.id}>
 
