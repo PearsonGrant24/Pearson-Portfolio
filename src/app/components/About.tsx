@@ -175,10 +175,10 @@ const About = () => {
               <h3>DevOps Engineer</h3>
               <span className="company">Mambos Chicken  </span>
               <ul>
-                <li>Automated deployments with Jenkins pipelines.</li>
-                <li>Deployed apps using Docker, ECS & Kubernetes.</li>
-                <li>Integrated SonarQube for code scanning.</li>
-                <li>Improved system reliability using logging + alerting.</li>
+                <li> - Automated deployments with Jenkins pipelines.</li>
+                <li> - Deployed apps using Docker, ECS & Kubernetes.</li>
+                <li> - Integrated SonarQube for code scanning.</li>
+                <li> - Improved system reliability using logging + alerting.</li>
               </ul>
             </div>
             <span className="duration">2024 - 2025</span>
