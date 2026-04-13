@@ -175,13 +175,15 @@ const About = () => {
               <h3>DevOps Engineer</h3>
               <span className="company">Mambos Chicken  </span>
               <ul>
-                <li> - Automated deployments with Jenkins pipelines.</li>
-                <li> - Deployed apps using Docker, ECS & Kubernetes.</li>
-                <li> - Integrated SonarQube for code scanning.</li>
-                <li> - Improved system reliability using logging + alerting.</li>
+                <li> - Built and maintained CI/​​CD pipelines using GitHub Actions and Jenkins for automated build, test, and
+                    deploymentworkflows.</li>
+                <li> - Integrated security scanning (e.g., container and code analysis) into pipelines to improve release quality.</li>
+                <li> - Automated Docker image build and registry workflows to support continuous delivery.</li>
+                <li> - Containerized applications using Docker and deployed workloads to AWS EKS clusters.</li>
+                <li> - Provisioned AWS infrastructure using Terraform including EC2, IAM, and networking resources.</li>
               </ul>
             </div>
-            <span className="duration">2024 - 2025</span>
+            <span className="duration">01/2024 - 12/2024</span>
           </div>
 
           <div className="experience-card">
