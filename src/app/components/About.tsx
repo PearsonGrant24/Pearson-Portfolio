@@ -156,8 +156,9 @@ const About = () => {
 consistency.</li>
                 <li>Automated infrastructure provisioning using Terraform, reducing manual configuration and improving environment
 reproducibility.</li>
-                <li>Implemented pipeline quality gates + security checks.</li>
-                <li>Created monitoring dashboards using Grafana & Prometheus.</li>
+                <li>Built and deployed containerized applications using Docker and Kubernetes in cloud environments.</li>
+                <li>Monitored application and infrastructure performance using logging and basic observability tools, identifying and
+resolving deployment issues.</li>
               </ul>
             </div>
             <span className="duration">2025 – Present</span>
