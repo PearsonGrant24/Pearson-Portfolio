@@ -150,7 +150,7 @@ const About = () => {
           <div className="experience-card">
             <div>
               <h3>DevOps Engineer</h3>
-              <span className="company">CargoSummit -- remote </span>
+              <span className="company">CargoSummit </span><span className="remote"> -- remote </span>
               <ul>
                 <li> - Designed and maintained CI/​​CD pipelines using GitHub Actions and Jenkins, improving deployment speed and
                 consistency.</li>
