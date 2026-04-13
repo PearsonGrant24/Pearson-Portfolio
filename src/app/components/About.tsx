@@ -153,17 +153,17 @@ const About = () => {
               <span className="company">CargoSummit</span>
               <ul>
                 <li> - Designed and maintained CI/​​CD pipelines using GitHub Actions and Jenkins, improving deployment speed and
-consistency.</li>
-                <li>Automated infrastructure provisioning using Terraform, reducing manual configuration and improving environment
-reproducibility.</li>
-                <li>Built and deployed containerized applications using Docker and Kubernetes in cloud environments.</li>
-                <li>Monitored application and infrastructure performance using logging and basic observability tools, identifying and
-resolving deployment issues.</li>
-                <li>Troubleshot build failures, deployment errors, and environment inconsistencies across development and
-production.</li>
-                <li>Collaborated with developers to streamline release processes and improve deployment reliability</li>
-                <li>Contributed to incident resolution and root cause analysis (RCA), helping prevent recurring issues.</li>
-                <li>Wrote automation scripts in Bash/​​Python to reduce manual operational tasks.</li>
+                consistency.</li>
+                <li> - Automated infrastructure provisioning using Terraform, reducing manual configuration and improving environment
+                reproducibility.</li>
+                <li> - Built and deployed containerized applications using Docker and Kubernetes in cloud environments.</li>
+                <li> - Monitored application and infrastructure performance using logging and basic observability tools, identifying and
+                resolving deployment issues.</li>
+                <li> - Troubleshot build failures, deployment errors, and environment inconsistencies across development and
+                production.</li>
+                <li> - Collaborated with developers to streamline release processes and improve deployment reliability</li>
+                <li> - Contributed to incident resolution and root cause analysis (RCA), helping prevent recurring issues.</li>
+                <li> - Wrote automation scripts in Bash/​​Python to reduce manual operational tasks.</li>
 
               </ul>
             </div>
