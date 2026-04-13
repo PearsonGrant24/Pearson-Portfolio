@@ -159,6 +159,12 @@ reproducibility.</li>
                 <li>Built and deployed containerized applications using Docker and Kubernetes in cloud environments.</li>
                 <li>Monitored application and infrastructure performance using logging and basic observability tools, identifying and
 resolving deployment issues.</li>
+                <li>Troubleshot build failures, deployment errors, and environment inconsistencies across development and
+production.</li>
+                <li>Collaborated with developers to streamline release processes and improve deployment reliability
+Contributed to incident resolution and root cause analysis (RCA), helping prevent recurring issues
+Wrote automation scripts in Bash/​​Python to reduce manual operational tasks.</li>
+
               </ul>
             </div>
             <span className="duration">2025 – Present</span>
