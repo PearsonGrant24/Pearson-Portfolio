@@ -152,7 +152,7 @@ const About = () => {
               <h3>DevOps Engineer</h3>
               <span className="company">CargoSummit</span>
               <ul>
-                <li>Built GitLab CI/CD pipelines for APIs and microservices.</li>
+                <li> - Built GitLab CI/CD pipelines for APIs and microservices.</li>
                 <li>Developed Terraform IaC modules (EKS, VPC, RDS, IAM).</li>
                 <li>Implemented pipeline quality gates + security checks.</li>
                 <li>Created monitoring dashboards using Grafana & Prometheus.</li>
@@ -172,7 +172,7 @@ const About = () => {
                 <li>Improved system reliability using logging + alerting.</li>
               </ul>
             </div>
-            <span className="duration">2024</span>
+            <span className="duration">2024 - 2025</span>
           </div>
 
           <div className="experience-card">
