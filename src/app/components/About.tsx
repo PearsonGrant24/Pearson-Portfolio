@@ -161,9 +161,9 @@ reproducibility.</li>
 resolving deployment issues.</li>
                 <li>Troubleshot build failures, deployment errors, and environment inconsistencies across development and
 production.</li>
-                <li>Collaborated with developers to streamline release processes and improve deployment reliability
-Contributed to incident resolution and root cause analysis (RCA), helping prevent recurring issues
-Wrote automation scripts in Bash/​​Python to reduce manual operational tasks.</li>
+                <li>Collaborated with developers to streamline release processes and improve deployment reliability</li>
+                <li>Contributed to incident resolution and root cause analysis (RCA), helping prevent recurring issues.</li>
+                <li>Wrote automation scripts in Bash/​​Python to reduce manual operational tasks.</li>
 
               </ul>
             </div>
