@@ -196,7 +196,7 @@ const About = () => {
                 <li> - Performed API testing & release validation.</li>
               </ul>
             </div>
-            <span className="duration">2021 – 2023</span>
+            <span className="duration">02/2021 – 12/2023</span>
           </div>
 
         </div>
