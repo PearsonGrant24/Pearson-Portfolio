@@ -191,9 +191,9 @@ const About = () => {
               <h3>Software Developer</h3>
               <span className="company">Willez Engineering</span>
               <ul>
-                <li>Developed backend features (Python, Java, Node.js).</li>
-                <li>Wrote automation scripts in Python.</li>
-                <li>Performed API testing & release validation.</li>
+                <li> - Developed backend features (Python, Java, Node.js).</li>
+                <li> - Wrote automation scripts in Python.</li>
+                <li> - Performed API testing & release validation.</li>
               </ul>
             </div>
             <span className="duration">2021 – 2023</span>
