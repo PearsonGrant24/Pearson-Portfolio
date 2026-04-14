@@ -188,8 +188,8 @@ const About = () => {
 
           <div className="experience-card">
             <div>
-              <h3>Software Developer</h3>
-              <span className="company">Willez Engineering</span>
+              <h3>Software Developer</h3> 
+              <span className="company">Willez Engineering</span> <span className="remote"> -- on site </span>
               <ul>
                 <li> - Developed backend features (Python, Java, Node.js).</li>
                 <li> - Wrote automation scripts in Python.</li>
