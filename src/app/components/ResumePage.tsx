@@ -83,7 +83,7 @@ const ResumePage: React.FC = () => {
             <ul>
               <li>Automated deployments with Jenkins pipelines.</li>
               <li>Deployed services using Docker, ECS, and Kubernetes.</li>
-              <li>Integrated SonarQube for code quality checks.</li>
+              <li>Integrated SonarQube for code quality checks.</li>          
             </ul>
           </div>
 
