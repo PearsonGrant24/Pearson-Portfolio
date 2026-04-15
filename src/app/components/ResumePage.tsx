@@ -95,9 +95,10 @@ const ResumePage: React.FC = () => {
             <h4>Software Developer — Willez Engineering</h4>
             <span>Feb 2021 – Dec 2023</span>
             <ul>
-              <li>Developed backend services using Python, Java, and Node.js.</li>
-              <li>Automated operational tasks using Python scripts.</li>
-            </ul>
+                <li> - Developed backend features (Python, Java, Node.js).</li>
+                <li> - Wrote automation scripts in Python.</li>
+                <li> - Performed API testing & release validation.</li>
+              </ul>
           </div>
         </div>
 
