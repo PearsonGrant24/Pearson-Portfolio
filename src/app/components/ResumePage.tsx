@@ -81,9 +81,13 @@ const ResumePage: React.FC = () => {
             <h4>DevOps Engineer — Mambos Chicken</h4>
             <span>Jan 2024 – Dec 2024</span>
             <ul>
-              <li>Automated deployments with Jenkins pipelines.</li>
-              <li>Deployed services using Docker, ECS, and Kubernetes.</li>
-              <li>Integrated SonarQube for code quality checks.</li>          
+              <li> - Built and maintained CI/​​CD pipelines using GitHub Actions and Jenkins for automated build, test, and
+                    deploymentworkflows.</li>
+                <li> - Integrated security scanning (e.g., container and code analysis) into pipelines to improve release quality.</li>
+                <li> - Automated Docker image build and registry workflows to support continuous delivery.</li>
+                <li> - Containerized applications using Docker and deployed workloads to AWS EKS clusters.</li>
+                <li> - Provisioned AWS infrastructure using Terraform including EC2, IAM, and networking resources.</li>
+                     
             </ul>
           </div>
 
