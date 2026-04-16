@@ -33,11 +33,15 @@ const ResumePage: React.FC = () => {
         <div className="resume-section">
           <h3>Professional Summary</h3>
           <p>
-            DevOps Engineer with experience designing, automating, and operating
-            scalable cloud infrastructure. Strong background in CI/CD,
-            Infrastructure as Code, containerization, and monitoring. Focused on
-            reliability, automation, and continuous improvement.
+            DevOps Engineer with 2+ years of hands-on experience building, automating, and maintaining cloud infrastructure and
+            CI/​​CD pipelines. Strong focus on system reliability, deployment automation, and performance optimization across
+            containerized environments. 
           </p>
+          <p>
+            Experienced with Docker, Kubernetes, Terraform, and CI/​​CD pipelines, with working knowledge of monitoring,
+            troubleshooting, and incident resolution in cloud environments. Adept at collaborating with cross-functional teams to
+            improve deployment efficiency, system uptime, and operational stability.
+            </p>
         </div>
 
         {/* Skills */}
