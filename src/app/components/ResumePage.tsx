@@ -108,9 +108,9 @@ const ResumePage: React.FC = () => {
         {/* Education */}
         <div className="resume-section">
           <h3>Education</h3>
-          <p>
-            Zimbabwe Open University   <br />
-             - Bachelor of Software Engineering (Honours) 
+          
+            <span>Zimbabwe Open University </span> <br />
+             <p>- Bachelor of Software Engineering (Honours) 
             
           </p>
         </div>
