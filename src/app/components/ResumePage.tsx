@@ -35,9 +35,8 @@ const ResumePage: React.FC = () => {
           <p>
             DevOps Engineer with 2+ years of hands-on experience building, automating, and maintaining cloud infrastructure and
             CI/​​CD pipelines. Strong focus on system reliability, deployment automation, and performance optimization across
-            containerized environments. 
-          </p>
-          <p>
+            containerized environments. <br/>
+          
             Experienced with Docker, Kubernetes, Terraform, and CI/​​CD pipelines, with working knowledge of monitoring,
             troubleshooting, and incident resolution in cloud environments. Adept at collaborating with cross-functional teams to
             improve deployment efficiency, system uptime, and operational stability.
@@ -119,9 +118,9 @@ const ResumePage: React.FC = () => {
         <div className="resume-section">
           <h3>Certifications</h3>
           <ul>
-            <li>Microsoft Azure Fundamentals</li>
-            <li>Oracle Data Management</li>
-            <li>Microsoft C# Certification</li>
+            <li> - Microsoft Azure Fundamentals</li>
+            <li> - Oracle Data Management</li>
+            <li> - Microsoft C# Certification</li>
           </ul>
         </div>
 
