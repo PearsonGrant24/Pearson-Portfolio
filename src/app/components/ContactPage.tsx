@@ -1,5 +1,4 @@
 import React from "react";
-//import "./ContactPage.scss";
 import { FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 

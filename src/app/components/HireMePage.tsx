@@ -1,5 +1,4 @@
 import React, { JSX } from "react";
-//import "./HireMePage.scss";
 import { motion } from "framer-motion";
 
 export default function HireMePage(): JSX.Element {
